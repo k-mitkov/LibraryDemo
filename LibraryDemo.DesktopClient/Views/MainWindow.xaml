@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryDemo.DesktopClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Icon="\images\bookIcon.png"
+        WindowState="Maximized"
+        Title="Всички книги на едно място" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Image Source="\images\books.jpg" Grid.Row="1"
+               Stretch="Fill"/>
+
+        <ContentControl Content="{Binding CurentView}" Grid.Row="1"/>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name ="Authors" Content = "Автори"
+                        Command="{Binding Path=AuthorCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="Moccasin"
+                  
+                   FontSize="50"
+                   Cursor="Hand"
+                   Width="512"/>
+            <Button x:Name ="Books" Content = "Книги"
+                        Command="{Binding Path=BookCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="Moccasin"
+                  
+                   FontSize="50"
+                   Cursor="Hand"
+                   Width="512"/>
+            <Button x:Name ="Libraries" Content = "Библиотеки"
+                        Command="{Binding Path=LibraryCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="Moccasin"
+                  
+                   FontSize="50"
+                   Cursor="Hand"
+                   Width="512"/>
+        </StackPanel>
     </Grid>
 </Window>

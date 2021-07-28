@@ -13,8 +13,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LibraryDemo.DesktopClient\LibraryDemo.DesktopClient.csproj" />
-  </ItemGroup>
-
 </Project>
