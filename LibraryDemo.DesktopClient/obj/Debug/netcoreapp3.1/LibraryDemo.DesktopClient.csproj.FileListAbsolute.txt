@@ -83,3 +83,5 @@ C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcore
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddBookView.baml
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\DeleteBookView.baml
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SearchBookView.baml
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.g.cs
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.baml

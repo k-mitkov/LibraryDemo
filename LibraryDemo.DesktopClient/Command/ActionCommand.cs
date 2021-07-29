@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace LibraryDemo.DesktopClient.Command
 {
-    class ActionCommand : ICommand
+    public class ActionCommand : ICommand
     {
         private readonly Action<object> execute;
         private readonly Func<object, bool> canExecute;

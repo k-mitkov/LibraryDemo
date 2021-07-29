@@ -6,12 +6,15 @@ using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class AllBooksViewModel
+    class ShowBooksByLibraryViewModel
     {
         private BusinessContex context;
+        private Library library;
 
-        public AllBooksViewModel()
+
+        public ShowBooksByLibraryViewModel(Library library)
         {
+            this.library = library;
             context = new BusinessContex();
         }
 
@@ -19,7 +22,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return context.GetBooks();
+                return context.GetBooksByLibraryId(library.Id);
             }
         }
     }

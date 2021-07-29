@@ -34,6 +34,9 @@
     <Compile Update="Views\SearchBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ShowBooksView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AddBookView.xaml">
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SearchBookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ShowBooksView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

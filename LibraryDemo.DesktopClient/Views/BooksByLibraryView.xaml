@@ -6,7 +6,29 @@
              xmlns:local="clr-namespace:LibraryDemo.DesktopClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Gold">
-            
+    <Grid Background="DarkSalmon">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="20" Grid.Row="0" Orientation="Horizontal">
+            <TextBlock x:Name="txt" Text="Изберете библиотека: " FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfLibraries}" 
+                      Width="500" Height="30" HorizontalAlignment="Left"
+                      SelectedItem="{Binding Path=SLibrary}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Content="Търси" Command="{Binding Path=ShowCommand}" 
+                    FontSize ="20" VerticalAlignment="Center" Width="250" Height="30" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <ContentControl Content="{Binding CurentView}" Grid.Row="1"/>
     </Grid>
 </UserControl>

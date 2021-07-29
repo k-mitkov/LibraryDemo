@@ -18,10 +18,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ContentControl Content="{Binding CurentView}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-
         <StackPanel Grid.Column="0" Grid.Row="0" Width="770" Height="250">
-            <Image Source="\images\allBooks.png" Height="13" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\images\allBooks.png" Height="193" Stretch="Fill" VerticalAlignment="Top" />
             <Button x:Name ="AllBooks" Content = "Всички книги"
                         Command="{Binding Path=AllBooksCommand}"
                    VerticalAlignment="Top"
@@ -103,5 +101,7 @@
                    Cursor="Hand"
                    Width="770"/>
         </StackPanel>
+        
+        <ContentControl Content="{Binding CurentView}" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
     </Grid>
 </UserControl>

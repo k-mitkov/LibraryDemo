@@ -1,4 +1,5 @@
 ﻿using LibraryDemo.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,17 +89,17 @@ namespace LibraryDemo.Data
 
         public List<Book> GetBooksByLibraryId(int id)
         {
-            return context.Books.Where((b)=>b.Library.Id==id).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b)=>b.Library.Id==id).ToList();
         }
 
         public List<Book> GetBooksByAuthorId(int id)
         {
-            return context.Books.Where((b) => b.Author.Id == id).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b) => b.Author.Id == id).ToList();
         }
 
         public List<Book> GetBooks()
         {
-            return context.Books.ToList();
+            return context.Books.Include("Author").Include("Library").ToList();
         }
 
         public Book FindBook(string title)
