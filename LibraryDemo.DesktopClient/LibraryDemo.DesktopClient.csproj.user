@@ -7,27 +7,63 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AddBookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AllBooksView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AuthorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BooksByAuthorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BooksByLibraryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\BookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\DeleteBookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LibraryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SearchBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AddBookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AllBooksView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AuthorView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\BooksByAuthorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BooksByLibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\BookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DeleteBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LibraryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SearchBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

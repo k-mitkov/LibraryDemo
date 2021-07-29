@@ -7,8 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="DarkSalmon">
-        <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfAuthors}"
-          SelectedItem="{Binding Path=SelectedAuthor}">
+        <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfAuthors}">
 			<ListView.View>
 				<GridView>
 					<GridViewColumn Header="Name" Width="420" DisplayMemberBinding="{Binding Name}" />

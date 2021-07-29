@@ -18,45 +18,45 @@ namespace LibraryDemo.DesktopClient.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private ActionCommand bookComand;
+        private ActionCommand bookCommand;
         
         public ActionCommand BookCommand
         {
             get
             {
-                if (bookComand == null)
+                if (bookCommand == null)
                 {
-                    bookComand = new ActionCommand(Books, CanExecuteShow);
+                    bookCommand = new ActionCommand(Books, CanExecuteShow);
                 }
-                return bookComand;
+                return bookCommand;
             }
         }
 
-        private ActionCommand authorComand;
+        private ActionCommand authorCommand;
 
         public ActionCommand AuthorCommand
         {
             get
             {
-                if (authorComand == null)
+                if (authorCommand == null)
                 {
-                    authorComand = new ActionCommand(Authors, CanExecuteShow);
+                    authorCommand = new ActionCommand(Authors, CanExecuteShow);
                 }
-                return authorComand;
+                return authorCommand;
             }
         }
 
-        private ActionCommand libraryComand;
+        private ActionCommand libraryCommand;
 
         public ActionCommand LibraryCommand
         {
             get
             {
-                if (libraryComand == null)
+                if (libraryCommand == null)
                 {
-                    libraryComand = new ActionCommand(Libraries, CanExecuteShow);
+                    libraryCommand = new ActionCommand(Libraries, CanExecuteShow);
                 }
-                return libraryComand;
+                return libraryCommand;
             }
         }
 

@@ -3,10 +3,105 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LibraryDemo.DesktopClient.Views"
+             xmlns:local="clr-namespace:LibraryDemo.DesktopClient.Views" xmlns:viewmodels="clr-namespace:LibraryDemo.DesktopClient.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:BookViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="DarkSalmon">
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Content="{Binding CurentView}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Width="770" Height="250">
+            <Image Source="\images\allBooks.png" Height="13" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="AllBooks" Content = "Всички книги"
+                        Command="{Binding Path=AllBooksCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1"  Width="770" Height="250">
+            <Image Source="\images\Author.jpg" Height="192" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="BooksByAuthor" Content = "Книги по автор"
+                        Command="{Binding Path=BooksByAuthorCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2"  Width="770" Height="250">
+            <Image Source="\images\Library.png" Height="173" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="BooksByLibrary" Content = "Книги по библиотека"
+                        Command="{Binding Path=BooksByLibraryCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1"  Width="770" Height="250">
+            <Image Source="\images\addBook.jpg" Height="192" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="AddBook" Content = "Добави книга"
+                        Command="{Binding Path=AddBookCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0"  Width="770" Height="250">
+            <Image Source="\images\search.jpg"  Height="193" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="SearchBook" Content = "Търси книга"
+                        Command="{Binding Path=SearchBookCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="2"  Width="770" Height="250">
+            <Image Source="\images\delete.jpg"  Height="173" Stretch="Fill" VerticalAlignment="Top" />
+            <Button x:Name ="DeleteBook" Content = "Истрий книга"
+                        Command="{Binding Path=DeleteBookCommand}"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Foreground="Black"
+                   Background="DarkSalmon"
+                  
+                   FontSize="40"
+                   Cursor="Hand"
+                   Width="770"/>
+        </StackPanel>
     </Grid>
 </UserControl>

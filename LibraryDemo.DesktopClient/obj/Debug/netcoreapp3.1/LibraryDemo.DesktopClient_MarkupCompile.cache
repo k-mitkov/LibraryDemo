@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\App.xaml
-4129413714
-2-1084076629
-11-2130969548
+10934801951
+8-600778437
+23343800830
 218306830959
-Views\AuthorView.xaml;Views\BookView.xaml;Views\LibraryView.xaml;Views\MainWindow.xaml;
+Views\AddBookView.xaml;Views\AllBooksView.xaml;Views\AuthorView.xaml;Views\BooksByAuthorView.xaml;Views\BooksByLibraryView.xaml;Views\BookView.xaml;Views\DeleteBookView.xaml;Views\LibraryView.xaml;Views\MainWindow.xaml;Views\SearchBookView.xaml;
 
 False
 

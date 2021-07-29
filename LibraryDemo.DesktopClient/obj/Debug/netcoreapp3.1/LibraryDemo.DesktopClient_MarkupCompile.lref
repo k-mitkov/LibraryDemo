@@ -4,4 +4,10 @@ FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AuthorView
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\MainWindow.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\BookView.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\LibraryView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AllBooksView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\BooksByAuthorView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\BooksByLibraryView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AddBookView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\DeleteBookView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\SearchBookView.xaml;;
 
