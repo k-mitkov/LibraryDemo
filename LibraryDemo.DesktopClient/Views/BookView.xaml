@@ -90,7 +90,7 @@
 
         <StackPanel Grid.Column="1" Grid.Row="2"  Width="770" Height="250">
             <Image Source="\images\delete.jpg"  Height="173" Stretch="Fill" VerticalAlignment="Top" />
-            <Button x:Name ="DeleteBook" Content = "Истрий книга"
+            <Button x:Name ="DeleteBook" Content = "Изтрий книга"
                         Command="{Binding Path=DeleteBookCommand}"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"

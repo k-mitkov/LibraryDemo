@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryDemo.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,7 @@ namespace LibraryDemo.DesktopClient.Views
     {
         public AddBookView()
         {
+            DataContext = new AddBookViewModel();
             InitializeComponent();
         }
     }

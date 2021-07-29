@@ -109,7 +109,7 @@ namespace LibraryDemo.Data
 
         public List<Book> SearchForBooks(string keyWord)
         {
-            return context.Books.Where((b) => b.Title.Contains(keyWord)).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b) => b.Title.Contains(keyWord)).ToList();
         }
 
         public bool DeleteBook(int id)

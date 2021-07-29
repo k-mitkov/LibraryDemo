@@ -154,8 +154,8 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void DeleteBook(Object o)
         {
-            DeleteBookViewModel viewModel = new DeleteBookViewModel();
-            DeleteBookView view = new DeleteBookView();
+            SearchBookToDeleteViewModel viewModel = new SearchBookToDeleteViewModel();
+            SearchBookView view = new SearchBookView();
             view.DataContext = viewModel;
             CurentView = view;
 

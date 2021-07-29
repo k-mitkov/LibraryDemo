@@ -14,13 +14,12 @@
 
         <StackPanel Margin="20" Grid.Row="0" Orientation="Horizontal">
             <TextBlock x:Name="txt" Text="Изберете библиотека: " FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfLibraries}" 
+            <ComboBox Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" 
                       Width="500" Height="30" HorizontalAlignment="Left"
                       SelectedItem="{Binding Path=SLibrary}" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>

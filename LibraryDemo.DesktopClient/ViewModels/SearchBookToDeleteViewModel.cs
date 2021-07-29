@@ -1,6 +1,6 @@
 ﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.Command;
+using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,15 +10,13 @@ using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class DeleteBookViewModel : INotifyPropertyChanged
+    class SearchBookToDeleteViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private BusinessContex context;
-        private List<Book> books;
 
-        public DeleteBookViewModel(List<Book> books)
+        public SearchBookToDeleteViewModel()
         {
-            this.books = books;
             context = new BusinessContex();
         }
 
@@ -29,36 +27,17 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
 
 
-        private ActionCommand deleteCommand;
+        private ActionCommand searchCommand;
 
-        public ActionCommand DeleteCommand
+        public ActionCommand SearchCommand
         {
             get
             {
-                if (deleteCommand == null)
+                if (searchCommand == null)
                 {
-                    deleteCommand = new ActionCommand(Delete, CanExecuteShow);
+                    searchCommand = new ActionCommand(SearchToDelete, CanExecuteShow);
                 }
-                return deleteCommand;
-            }
-        }
-
-        public List<Book> ListOfBooks
-        {
-            get
-            {
-                return books;
-            }
-        }
-
-        private Book _sbook;
-
-        public Book SBook
-        {
-            get { return _sbook; }
-            set
-            {
-                _sbook = value;
+                return searchCommand;
             }
         }
         public bool CanExecuteShow(Object o)
@@ -66,10 +45,24 @@ namespace LibraryDemo.DesktopClient.ViewModels
             return true;
         }
 
+        private string _keyWord;
 
-        public void Delete(Object o)
+        public string KeyWord
         {
-            context.DeleteBook(_sbook.Id);
+            get { return _keyWord; }
+            set
+            {
+                _keyWord = value;
+            }
+        }
+
+        public void SearchToDelete(Object o)
+        {
+            DeleteBookViewModel viewModel = new DeleteBookViewModel(context.SearchForBooks(_keyWord));
+            DeleteBookView view = new DeleteBookView();
+            view.DataContext = viewModel;
+            CurentView = view;
+
         }
 
         private UserControl currentView;
