@@ -1,23 +1,22 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class ShowBooksViewModel
+    public class ShowBooksViewModel : BaseViewModel
     {
-        private BusinessContex context;
+        #region Declaration
         private Author author;
+        #endregion
 
-
+        #region Constructor
         public ShowBooksViewModel(Author author)
         {
             this.author = author;
-            context = new BusinessContex();
         }
+        #endregion
 
+        #region Proparties
         public List<Book> ListOfBooks
         {
             get
@@ -25,5 +24,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return context.GetBooksByAuthorId(author.Id);
             }
         }
+        #endregion
     }
 }

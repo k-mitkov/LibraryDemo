@@ -1,25 +1,20 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : BaseNotifyPropertyChangedViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+        #region Declaration
         private ActionCommand bookCommand;
-        
+        private ActionCommand authorCommand;
+        private ActionCommand libraryCommand;
+        private UserControl currentView;
+        #endregion
+
+        #region Proparties
         public ActionCommand BookCommand
         {
             get
@@ -31,8 +26,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return bookCommand;
             }
         }
-
-        private ActionCommand authorCommand;
 
         public ActionCommand AuthorCommand
         {
@@ -46,8 +39,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        private ActionCommand libraryCommand;
-
         public ActionCommand LibraryCommand
         {
             get
@@ -59,7 +50,22 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return libraryCommand;
             }
         }
+        public UserControl CurentView
+        {
+            get
+            {
+                return currentView;
+            }
 
+            set
+            {
+                currentView = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+
+        #region Methods
         public bool CanExecuteShow(Object o)
         {
             return true;
@@ -90,21 +96,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             view.DataContext = viewModel;
             CurentView = view;
         }
-
-        private UserControl currentView;
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
-
+        #endregion
     }
 }

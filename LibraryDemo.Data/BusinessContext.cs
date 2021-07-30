@@ -3,11 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LibraryDemo.Data
 {
-    public class BusinessContex : IDisposable
+    public class BusinessContex : IDataService , IDisposable
     {
         #region Definition
         private readonly DataContext context;
@@ -19,14 +18,9 @@ namespace LibraryDemo.Data
         {
             context = new DataContext();
         }
-        public Author AddNewAuthor(string name,string email,char gender)
+
+        public Author AddNewAuthor(Author author)
         {
-            var author = new Author
-            {
-                Name = name,
-                Email = email,
-                Gender = gender
-            };
             context.Authors.Add(author);
             context.SaveChanges();
             return author;
@@ -44,13 +38,8 @@ namespace LibraryDemo.Data
             return context.Authors.ToList();
         }
 
-        public Library AddNewLibrary(string name, string address)
+        public Library AddNewLibrary(Library library)
         {
-            var library = new Library()
-            {
-                Name = name,
-                Address = address
-            };
             context.Libraries.Add(library);
             context.SaveChanges();
             return library;
@@ -61,7 +50,6 @@ namespace LibraryDemo.Data
             Library library = context.Libraries.FirstOrDefault((l) => l.Name.Equals(name));
             library.Books = this.GetBooksByLibraryId(library.Id);
             return library;
-
         }
 
         public List<Library> GetLibraries()
@@ -69,24 +57,13 @@ namespace LibraryDemo.Data
             return context.Libraries.ToList();
         }
 
-        public Book AddNewBook(string title, string authorName, string libraryName,decimal price)
+        public Book AddNewBook(Book book)
         {
-            Author author = this.FindAuthor(authorName);
-            Library library = this.FindLibrary(libraryName);
-            var book = new Book
-            {
-                Title = title,
-                Author = author,
-                Price = price,
-                Library = library
-            };
-
             context.Books.Add(book);
             context.SaveChanges();
 
             return book;
         }
-
         public List<Book> GetBooksByLibraryId(int id)
         {
             return context.Books.Include("Author").Include("Library").Where((b)=>b.Library.Id==id).ToList();

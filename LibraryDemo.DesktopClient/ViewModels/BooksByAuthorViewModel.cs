@@ -1,31 +1,21 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
+﻿using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class BooksByAuthorViewModel : INotifyPropertyChanged
+    public class BooksByAuthorViewModel : BaseNotifyPropertyChangedViewModel
     {
-        private BusinessContex context;
-        public event PropertyChangedEventHandler PropertyChanged;
+        #region Declaration
+        private Author _sauthor;
+        private ActionCommand showCommand;
+        private UserControl currentView;
+        #endregion
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public BooksByAuthorViewModel()
-        {
-            context = new BusinessContex();
-        }
-
+        #region Proparties
         public List<Author> ListOfAuthors
         {
             get
@@ -33,8 +23,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return context.GetAuthors();
             }
         }
-
-        private Author _sauthor;
 
         public Author SAuthor
         {
@@ -44,8 +32,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 _sauthor = value; 
             }
         }
-
-        private ActionCommand showCommand;
 
         public ActionCommand ShowCommand
         {
@@ -58,21 +44,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return showCommand;
             }
         }
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
 
-        public void Show(Object o)
-        {
-            ShowBooksViewModel viewModel = new ShowBooksViewModel(_sauthor);
-            AllBooksView view = new AllBooksView() ;
-            view.DataContext = viewModel;
-            CurentView = view;
-
-        }
-
-        private UserControl currentView;
         public UserControl CurentView
         {
             get
@@ -86,6 +58,21 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
+        #region Methods
+        public bool CanExecuteShow(Object o)
+        {
+            return true;
+        }
+
+        public void Show(Object o)
+        {
+            ShowBooksViewModel viewModel = new ShowBooksViewModel(_sauthor);
+            AllBooksView view = new AllBooksView() ;
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+        #endregion
     }
 }

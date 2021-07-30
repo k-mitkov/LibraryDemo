@@ -1,34 +1,19 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class SearchBookViewModel : INotifyPropertyChanged
+    public class SearchBookViewModel : BaseNotifyPropertyChangedViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private BusinessContex context;
-
-        public SearchBookViewModel()
-        {
-            context = new BusinessContex();
-        }
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
-
+        #region Declaration 
         private ActionCommand searchCommand;
+        private string _keyWord;
+        private UserControl currentView;
+        #endregion
 
+        #region Proparties
         public ActionCommand SearchCommand
         {
             get
@@ -40,13 +25,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return searchCommand;
             }
         }
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
-
-        private string _keyWord;
-
         public string KeyWord
         {
             get { return _keyWord; }
@@ -55,17 +33,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 _keyWord = value;
             }
         }
-
-        public void Search(Object o)
-        {
-            ShowBooksByKeyWordViewModel viewModel = new ShowBooksByKeyWordViewModel(_keyWord);
-            AllBooksView view = new AllBooksView();
-            view.DataContext = viewModel;
-            CurentView = view;
-
-        }
-
-        private UserControl currentView;
         public UserControl CurentView
         {
             get
@@ -79,6 +46,20 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
+        #region Methods
+        public bool CanExecuteShow(Object o)
+        {
+            return true;
+        }
+        public void Search(Object o)
+        {
+            ShowBooksByKeyWordViewModel viewModel = new ShowBooksByKeyWordViewModel(_keyWord);
+            AllBooksView view = new AllBooksView();
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+        #endregion
     }
 }

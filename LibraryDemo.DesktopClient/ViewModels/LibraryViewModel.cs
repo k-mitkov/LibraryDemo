@@ -1,29 +1,23 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class LibraryViewModel
+    public class LibraryViewModel : BaseViewModel
     {
-        BusinessContex businessContext;
+        #region Declaration
         private List<Library> listOfLibraries;
+        #endregion
 
-        public LibraryViewModel()
-        {
-            businessContext = new BusinessContex();
-        }
-
+        #region Proparties
         public List<Library> ListOfLibraries
         {
             get
             {
-                listOfLibraries = businessContext.GetLibraries();
+                listOfLibraries = context.GetLibraries();
                 return listOfLibraries;
             }
         }
-
+        #endregion
     }
 }

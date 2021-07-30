@@ -1,25 +1,23 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class BookViewModel : INotifyPropertyChanged
+    public class BookViewModel : BaseNotifyPropertyChangedViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+        #region Declaration
         private ActionCommand allBooksCommand;
+        private ActionCommand booksByAuthorCommand;
+        private ActionCommand booksByLibraryCommand;
+        private ActionCommand addBookCommand;
+        private ActionCommand searchBookCommand;
+        private ActionCommand deleteBookCommand;
+        private UserControl currentView;
+        #endregion
 
+        #region Proparties
         public ActionCommand AllBooksCommand
         {
             get
@@ -31,8 +29,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return allBooksCommand;
             }
         }
-
-        private ActionCommand booksByAuthorCommand;
 
         public ActionCommand BooksByAuthorCommand
         {
@@ -46,8 +42,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        private ActionCommand booksByLibraryCommand;
-
         public ActionCommand BooksByLibraryCommand
         {
             get
@@ -59,8 +53,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return booksByLibraryCommand;
             }
         }
-
-        private ActionCommand addBookCommand;
 
         public ActionCommand AddBookCommand
         {
@@ -74,8 +66,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        private ActionCommand searchBookCommand;
-
         public ActionCommand SearchBookCommand
         {
             get
@@ -88,8 +78,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        private ActionCommand deleteBookCommand;
-
         public ActionCommand DeleteBookCommand
         {
             get
@@ -101,7 +89,22 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return deleteBookCommand;
             }
         }
+        public UserControl CurentView
+        {
+            get
+            {
+                return currentView;
+            }
 
+            set
+            {
+                currentView = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+
+        #region Methods
         public bool CanExecuteShow(Object o)
         {
             return true;
@@ -131,7 +134,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             BooksByLibraryView view = new BooksByLibraryView();
             view.DataContext = viewModel;
             CurentView = view;
-
         }
 
         public void AddBook(Object o)
@@ -140,7 +142,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             AddBookView view = new AddBookView();
             view.DataContext = viewModel;
             CurentView = view;
-
         }
 
         public void SearchBook(Object o)
@@ -149,7 +150,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             SearchBookView view = new SearchBookView();
             view.DataContext = viewModel;
             CurentView = view;
-
         }
 
         public void DeleteBook(Object o)
@@ -158,23 +158,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             SearchBookView view = new SearchBookView();
             view.DataContext = viewModel;
             CurentView = view;
-
         }
-
-
-        private UserControl currentView;
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
+        #endregion
     }
 }

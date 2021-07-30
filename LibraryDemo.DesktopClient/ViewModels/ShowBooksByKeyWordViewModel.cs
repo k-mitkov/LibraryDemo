@@ -1,23 +1,22 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class ShowBooksByKeyWordViewModel
+    public class ShowBooksByKeyWordViewModel : BaseViewModel
     {
-        private BusinessContex context;
+        #region Declaration
         private string keyWord;
+        #endregion
 
-
+        #region Constuctor
         public ShowBooksByKeyWordViewModel(string keyWord)
         {
             this.keyWord = keyWord;
-            context = new BusinessContex();
         }
-
+        #endregion
+        
+        #region Proparties
         public List<Book> ListOfBooks
         {
             get
@@ -25,5 +24,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return context.SearchForBooks(keyWord);
             }
         }
+        #endregion
     }
 }

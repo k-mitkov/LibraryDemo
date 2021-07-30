@@ -1,23 +1,22 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class ShowBooksByLibraryViewModel
+    public class ShowBooksByLibraryViewModel : BaseViewModel
     {
-        private BusinessContex context;
+        #region Declaration
         private Library library;
+        #endregion
 
-
+        #region Constructor
         public ShowBooksByLibraryViewModel(Library library)
         {
             this.library = library;
-            context = new BusinessContex();
         }
+        #endregion
 
+        #region Proparties
         public List<Book> ListOfBooks
         {
             get
@@ -25,5 +24,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return context.GetBooksByLibraryId(library.Id);
             }
         }
+        #endregion
     }
 }

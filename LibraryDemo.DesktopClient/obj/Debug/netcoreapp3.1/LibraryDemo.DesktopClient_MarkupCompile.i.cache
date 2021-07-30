@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\App.xaml
 111885053867
 8-600778437
-30440699107
+32-855868021
 218306830959
 Views\AddBookView.xaml;Views\AllBooksView.xaml;Views\AuthorView.xaml;Views\BooksByAuthorView.xaml;Views\BooksByLibraryView.xaml;Views\BookView.xaml;Views\DeleteBookView.xaml;Views\LibraryView.xaml;Views\MainWindow.xaml;Views\SearchBookView.xaml;Views\ShowBooksView.xaml;
 
-True
+False
 

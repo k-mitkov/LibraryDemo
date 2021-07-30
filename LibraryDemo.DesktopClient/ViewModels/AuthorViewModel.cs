@@ -1,28 +1,23 @@
-﻿using LibraryDemo.Data;
-using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class AuthorViewModel
+    public class AuthorViewModel : BaseViewModel
     {
-        private BusinessContex businessContext;
-
-        public AuthorViewModel()
-        {
-            businessContext = new BusinessContex();
-        }
-
+        #region Declaration
         private List<Author> listOfAuthors;
+        #endregion
+
+        #region Proparties
         public List<Author> ListOfAuthors
         {
             get
             {
-                listOfAuthors = businessContext.GetAuthors();
+                listOfAuthors = context.GetAuthors();
                 return listOfAuthors;
             }
         }
+        #endregion
     }
 }
