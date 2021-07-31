@@ -1,6 +1,8 @@
-﻿using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.Data.Models;
+using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -11,6 +13,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand searchCommand;
         private string _keyWord;
         private UserControl currentView;
+        private string errMasage;
         #endregion
 
         #region Proparties
@@ -46,6 +49,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        public string ErrMasage
+        {
+            get
+            {
+                return errMasage;
+            }
+            set
+            {
+                errMasage = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -55,10 +70,20 @@ namespace LibraryDemo.DesktopClient.ViewModels
         }
         public void Search(Object o)
         {
-            ShowBooksByKeyWordViewModel viewModel = new ShowBooksByKeyWordViewModel(_keyWord);
-            AllBooksView view = new AllBooksView();
-            view.DataContext = viewModel;
-            CurentView = view;
+            List<Book> books = context.SearchForBooks(_keyWord);
+            if (books.Count == 0)
+            {
+                ErrMasage = "Не са намерени книги!";
+                CurentView = null;
+            }
+            else
+            {
+                ErrMasage = "";
+                ShowBooksByKeyWordViewModel viewModel = new ShowBooksByKeyWordViewModel(books);
+                ShowBooksView view = new ShowBooksView();
+                view.DataContext = viewModel;
+                CurentView = view;
+            }
         }
         #endregion
     }

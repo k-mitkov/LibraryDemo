@@ -10,9 +10,6 @@
     <Compile Update="Views\AddBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\AllBooksView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\AuthorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,12 +34,15 @@
     <Compile Update="Views\ShowBooksView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SuccessfulAddedBookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuccessfulDeletedBookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AddBookView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\AllBooksView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AuthorView.xaml">
@@ -70,6 +70,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ShowBooksView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuccessfulAddedBookView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuccessfulDeletedBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

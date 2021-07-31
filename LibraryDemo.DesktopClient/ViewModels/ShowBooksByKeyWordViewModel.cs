@@ -6,13 +6,13 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public class ShowBooksByKeyWordViewModel : BaseViewModel
     {
         #region Declaration
-        private string keyWord;
+        private List<Book> books;
         #endregion
 
         #region Constuctor
-        public ShowBooksByKeyWordViewModel(string keyWord)
+        public ShowBooksByKeyWordViewModel(List<Book> books)
         {
-            this.keyWord = keyWord;
+            this.books = books;
         }
         #endregion
         
@@ -21,7 +21,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return context.SearchForBooks(keyWord);
+                return books;
             }
         }
         #endregion

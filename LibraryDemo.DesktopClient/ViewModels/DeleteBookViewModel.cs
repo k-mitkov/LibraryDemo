@@ -1,5 +1,6 @@
 ﻿using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.Command;
+using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand deleteCommand;
         private Book _sbook;
         private UserControl currentView;
+        private string errMasage;
         #endregion
 
         #region Constructor
@@ -64,6 +66,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        public string ErrMasage
+        {
+            get
+            {
+                return errMasage;
+            }
+            set
+            {
+                errMasage = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -74,7 +88,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Delete(Object o)
         {
-            context.DeleteBook(_sbook.Id);
+            if (_sbook != null)
+            {
+                context.DeleteBook(_sbook.Id);
+                SuccesfulDeletedBookViewModel viewModel = new SuccesfulDeletedBookViewModel();
+                SuccessfulDeletedBookView view = new SuccessfulDeletedBookView();
+                view.DataContext = viewModel;
+                CurentView = view;
+            }
+            else
+            {
+                ErrMasage = "Моля изберете книга!";
+            }
         }
         #endregion
     }

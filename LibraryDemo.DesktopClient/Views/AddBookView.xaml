@@ -44,7 +44,10 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
+            <TextBlock Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
             <Button Width="400" Height="50" Content="Добави" FontSize="20" Command="{Binding Path=AddCommand}"/>
         </StackPanel>
+        
+        <ContentControl Content="{Binding CurentView}"/>
     </Grid>
 </UserControl>

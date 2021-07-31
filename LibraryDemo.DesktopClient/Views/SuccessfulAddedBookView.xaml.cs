@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryDemo.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,11 +15,11 @@ using System.Windows.Shapes;
 namespace LibraryDemo.DesktopClient.Views
 {
     /// <summary>
-    /// Interaction logic for AllBooksView.xaml
+    /// Interaction logic for SuccessfulAddedBookView.xaml
     /// </summary>
-    public partial class AllBooksView : UserControl
+    public partial class SuccessfulAddedBookView : UserControl
     {
-        public AllBooksView()
+        public SuccessfulAddedBookView()
         {
             InitializeComponent();
         }

@@ -13,6 +13,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private Author _sauthor;
         private ActionCommand showCommand;
         private UserControl currentView;
+        private string errMasage;
         #endregion
 
         #region Proparties
@@ -58,6 +59,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        public string ErrMasage
+        {
+            get
+            {
+                return errMasage;
+            }
+            set
+            {
+                errMasage = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -68,10 +81,19 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Show(Object o)
         {
-            ShowBooksViewModel viewModel = new ShowBooksViewModel(_sauthor);
-            AllBooksView view = new AllBooksView() ;
-            view.DataContext = viewModel;
-            CurentView = view;
+            if (_sauthor!=null)
+            {
+                ErrMasage = "";
+                ShowBooksViewModel viewModel = new ShowBooksViewModel(_sauthor);
+                ShowBooksView view = new ShowBooksView();
+                view.DataContext = viewModel;
+                CurentView = view;
+            }
+            else
+            {
+                ErrMasage = "Моля изберете автор";
+                CurentView = null;
+            }
         }
         #endregion
     }

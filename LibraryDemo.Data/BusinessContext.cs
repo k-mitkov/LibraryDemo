@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace LibraryDemo.Data
 {
-    public class BusinessContex : IDataService , IDisposable
+    public class BusinessContext : IDataService , IDisposable
     {
         #region Definition
         private readonly DataContext context;
@@ -14,7 +14,7 @@ namespace LibraryDemo.Data
         #endregion
 
         #region Methods
-        public BusinessContex()
+        public BusinessContext()
         {
             context = new DataContext();
         }

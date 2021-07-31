@@ -21,7 +21,6 @@ namespace LibraryDemo.DesktopClient.Views
     {
         public BookView()
         {
-            DataContext = new BookViewModel();
             InitializeComponent();
         }
     }

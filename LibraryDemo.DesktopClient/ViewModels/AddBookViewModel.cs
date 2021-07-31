@@ -1,5 +1,6 @@
 ﻿using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.Command;
+using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
@@ -16,6 +17,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand addCommand;
         private decimal price;
         private UserControl currentView;
+        private string errMasage;
         #endregion
 
         #region Proparties
@@ -90,6 +92,19 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string ErrMasage
+        {
+            get
+            {
+                return errMasage;
+            }
+            set
+            {
+                errMasage = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -110,14 +125,41 @@ namespace LibraryDemo.DesktopClient.ViewModels
                     Library = _slibrary
                 };
                 context.AddNewBook(book);
+                SuccessfulAddedBookViewModel viewModel = new SuccessfulAddedBookViewModel();
+                SuccessfulAddedBookView view = new SuccessfulAddedBookView();
+                view.DataContext = viewModel;
+                CurentView = view;
             }
-            //view.DataContext = viewModel;
-            //CurentView = view;
+            else
+            {
+                ErrMasage = errMasage;
+            }
         }
         
         private bool ValidateInput()
         {
-            return _title != null && _title.Length > 2 && Decimal.TryParse(_price, out price) && price > 0;
+            if(_title != null && _title.Length > 2)
+            {
+                if(Decimal.TryParse(_price, out price) && price > 0)
+                {
+                    if (_sauthor != null)
+                    {
+                        if(_slibrary != null)
+                        {
+                            return true;
+                        }
+                        errMasage = "Моля изберете библиотека!";
+                        return false;
+
+                    }
+                    errMasage = "Моля изберете автор!";
+                    return false;
+                }
+                errMasage = "Цената тябва да е по-голяма от 0 и изписана с цифри.";
+                return false;
+            }
+            errMasage = "Заглавието трябва да е поне 3 символа.";
+            return false;
         }
         #endregion
     }

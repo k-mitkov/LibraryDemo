@@ -11,7 +11,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #region Constructor
         public BaseViewModel()
         {
-            context = new BusinessContex();
+            context = new BusinessContext();
         }
         #endregion
     }

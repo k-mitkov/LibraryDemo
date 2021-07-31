@@ -1,7 +1,6 @@
 ﻿
 
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AddBookView.xaml;;
-FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AllBooksView.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\AuthorView.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\BooksByAuthorView.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\BooksByLibraryView.xaml;;
@@ -11,4 +10,6 @@ FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\LibraryVie
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\MainWindow.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\SearchBookView.xaml;;
 FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\ShowBooksView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\SuccessfulAddedBookView.xaml;;
+FC:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\Views\SuccessfulDeletedBookView.xaml;;
 

@@ -1,6 +1,8 @@
-﻿using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.Data.Models;
+using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -11,6 +13,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand searchCommand;
         private string _keyWord;
         private UserControl currentView;
+        private string errMasage;
         #endregion
 
         #region Proparties 
@@ -46,6 +49,19 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 _keyWord = value;
             }
         }
+
+        public string ErrMasage
+        {
+            get
+            {
+                return errMasage;
+            }
+            set
+            {
+                errMasage = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -56,10 +72,20 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void SearchToDelete(Object o)
         {
-            DeleteBookViewModel viewModel = new DeleteBookViewModel(context.SearchForBooks(_keyWord));
-            DeleteBookView view = new DeleteBookView();
-            view.DataContext = viewModel;
-            CurentView = view;
+            List<Book> books = context.SearchForBooks(_keyWord);
+            if (books.Count!=0)
+            {
+                ErrMasage = "";
+                DeleteBookViewModel viewModel = new DeleteBookViewModel(books);
+                DeleteBookView view = new DeleteBookView();
+                view.DataContext = viewModel;
+                CurentView = view;
+            }
+            else
+            {
+                ErrMasage = "Не е намерена книга!";
+                CurentView = null;
+            }
 
         }
         #endregion

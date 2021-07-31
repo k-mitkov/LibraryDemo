@@ -113,7 +113,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         public void AllBooks(Object o)
         {
             AllBooksViewModel viewModel = new AllBooksViewModel();
-            AllBooksView view = new AllBooksView();
+            ShowBooksView view = new ShowBooksView();
             view.DataContext = viewModel;
             CurentView = view;
 

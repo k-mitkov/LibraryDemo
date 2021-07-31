@@ -71,8 +71,6 @@ C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcore
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\images\search.jpg
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\images\addBook.jpg
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\images\delete.jpg
-C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AllBooksView.g.cs
-C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AllBooksView.baml
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BooksByAuthorView.g.cs
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BooksByAuthorView.baml
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BooksByLibraryView.g.cs
@@ -85,3 +83,7 @@ C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcore
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SearchBookView.baml
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.g.cs
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.baml
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccessfulAddedBookView.g.cs
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccessfulAddedBookView.baml
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccessfulDeletedBookView.g.cs
+C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccessfulDeletedBookView.baml
