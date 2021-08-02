@@ -3,6 +3,7 @@ using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -21,11 +22,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #endregion
 
         #region Proparties
-        public List<Author> ListOfAuthors
+        public IEnumerable<Author> ListOfAuthors
         {
             get
             {
-                return context.GetAuthors();
+                return context.GetAuthors().ToList();
             }
         }
 
@@ -38,11 +39,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public List<Library> ListOfLibraries
+        public IEnumerable<Library> ListOfLibraries
         {
             get
             {
-                return context.GetLibraries();
+                return context.GetLibraries().ToList();
             }
         }
 
@@ -93,6 +94,42 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
+        public string TitleContent
+        {
+            get
+            {
+                return content.TitleHeader();
+            }
+        }
+        public string AuthorContent
+        {
+            get
+            {
+                return content.AuthorHeader();
+            }
+        }
+        public string PriceContent
+        {
+            get
+            {
+                return content.PriceHeader();
+            }
+        }
+        public string LibraryContent
+        {
+            get
+            {
+                return content.LibraryHeader();
+            }
+        }
+        public string AddButtonContent
+        {
+            get
+            {
+                return content.AddButton();
+            }
+        }
+
         public string ErrMasage
         {
             get
@@ -126,7 +163,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 };
                 context.AddNewBook(book);
                 SuccessfulAddedBookViewModel viewModel = new SuccessfulAddedBookViewModel();
-                SuccessfulAddedBookView view = new SuccessfulAddedBookView();
+                SuccessfulOperationView  view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
                 CurentView = view;
             }
@@ -140,7 +177,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             if(_title != null && _title.Length > 2)
             {
-                if(Decimal.TryParse(_price, out price) && price > 0)
+                if(decimal.TryParse(_price, out price) && price > 0)
                 {
                     if (_sauthor != null)
                     {
@@ -148,17 +185,17 @@ namespace LibraryDemo.DesktopClient.ViewModels
                         {
                             return true;
                         }
-                        errMasage = "Моля изберете библиотека!";
+                        errMasage = content.ErrSelectLibrary();
                         return false;
 
                     }
-                    errMasage = "Моля изберете автор!";
+                    errMasage = content.ErrSelectAuthor();
                     return false;
                 }
-                errMasage = "Цената тябва да е по-голяма от 0 и изписана с цифри.";
+                errMasage = content.ErrSelectPrice();
                 return false;
             }
-            errMasage = "Заглавието трябва да е поне 3 символа.";
+            errMasage = content.ErrSelectTitle();
             return false;
         }
         #endregion

@@ -13,10 +13,7 @@
     <Compile Update="Views\AuthorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\BooksByAuthorView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\BooksByLibraryView.xaml.cs">
+    <Compile Update="Views\BooksByView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\BookView.xaml.cs">
@@ -31,13 +28,13 @@
     <Compile Update="Views\SearchBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ShowBooksView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SuccessfulAddedBookView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\SuccessfulDeletedBookView.xaml.cs">
+    <Compile Update="Views\SuccessfulOperationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -48,10 +45,7 @@
     <Page Update="Views\AuthorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\BooksByAuthorView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\BooksByLibraryView.xaml">
+    <Page Update="Views\BooksByView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\BookView.xaml">
@@ -69,13 +63,13 @@
     <Page Update="Views\SearchBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ShowBooksView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SuccessfulAddedBookView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\SuccessfulDeletedBookView.xaml">
+    <Page Update="Views\SuccessfulOperationView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -10,9 +10,9 @@
         <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfAuthors}">
 			<ListView.View>
 				<GridView>
-					<GridViewColumn Header="Name" Width="420" DisplayMemberBinding="{Binding Name}" />
-					<GridViewColumn Header="Gender" Width="200" DisplayMemberBinding="{Binding Gender}" />
-					<GridViewColumn Header="Mail" Width="720">
+					<GridViewColumn Header="{Binding NameHeader}" Width="420" DisplayMemberBinding="{Binding Name}" />
+					<GridViewColumn Header="{Binding GenderHeader}" Width="200" DisplayMemberBinding="{Binding Gender}" />
+					<GridViewColumn Header="{Binding MailHeader}" Width="720">
 						<GridViewColumn.CellTemplate>
 							<DataTemplate>
 								<TextBlock Text="{Binding Email}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />

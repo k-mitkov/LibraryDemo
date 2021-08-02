@@ -53,7 +53,8 @@ namespace LibraryDemo.DesktopClient.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;component/views/successfuldeletedbookview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;V1.0.0.0;component/views/successfuldeletedbookview.xam" +
+                    "l", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SuccessfulDeletedBookView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

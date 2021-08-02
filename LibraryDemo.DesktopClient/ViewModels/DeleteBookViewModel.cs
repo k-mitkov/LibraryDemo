@@ -10,7 +10,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public class DeleteBookViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaration
-        private List<Book> books;
+        private IEnumerable<Book> books;
         private ActionCommand deleteCommand;
         private Book _sbook;
         private UserControl currentView;
@@ -37,7 +37,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public List<Book> ListOfBooks
+        public IEnumerable<Book> ListOfBooks
         {
             get
             {
@@ -66,6 +66,23 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string DeleteButtonContent
+        {
+            get
+            {
+                return content.DeleteButton();
+            }
+        }
+
+        public string SelectToDeleteContent
+        {
+            get
+            {
+                return content.SelectBookText();
+            }
+        }
+
         public string ErrMasage
         {
             get
@@ -92,13 +109,13 @@ namespace LibraryDemo.DesktopClient.ViewModels
             {
                 context.DeleteBook(_sbook.Id);
                 SuccesfulDeletedBookViewModel viewModel = new SuccesfulDeletedBookViewModel();
-                SuccessfulDeletedBookView view = new SuccessfulDeletedBookView();
+                SuccessfulOperationView view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
                 CurentView = view;
             }
             else
             {
-                ErrMasage = "Моля изберете книга!";
+                ErrMasage = content.ErrSelectBook();
             }
         }
         #endregion

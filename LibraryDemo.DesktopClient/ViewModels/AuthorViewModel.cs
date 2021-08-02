@@ -1,21 +1,49 @@
 ﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
     public class AuthorViewModel : BaseViewModel
     {
         #region Declaration
-        private List<Author> listOfAuthors;
+        private IEnumerable<Author> listOfAuthors;
         #endregion
 
         #region Proparties
-        public List<Author> ListOfAuthors
+        public IEnumerable<Author> ListOfAuthors
         {
             get
             {
-                listOfAuthors = context.GetAuthors();
+                if (listOfAuthors == null)
+                {
+                    listOfAuthors = context.GetAuthors().ToList();
+                }
                 return listOfAuthors;
+            }
+        }
+
+        public string NameHeader
+        {
+            get
+            {
+                return content.NameHeader();
+            }
+        }
+
+        public string GenderHeader
+        {
+            get
+            {
+                return content.GenderHeader();
+            }
+        }
+
+        public string MailHeader
+        {
+            get
+            {
+                return content.MailHeader();
             }
         }
         #endregion

@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace LibraryDemo.DesktopClient.Views
 {
     /// <summary>
-    /// Interaction logic for SuccessfulDeletedBookView.xaml
+    /// Interaction logic for SuccessfulOperationView.xaml
     /// </summary>
-    public partial class SuccessfulDeletedBookView : UserControl
+    public partial class SuccessfulOperationView : UserControl
     {
-        public SuccessfulDeletedBookView()
+        public SuccessfulOperationView()
         {
             InitializeComponent();
         }

@@ -1,5 +1,6 @@
 ﻿using LibraryDemo.Data.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
@@ -17,11 +18,40 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #endregion
 
         #region Proparties
-        public List<Book> ListOfBooks
+        public IEnumerable<Book> ListOfBooks
         {
             get
             {
-                return context.GetBooksByLibraryId(library.Id);
+                return context.GetBooksByLibraryId(library.Id).ToList();
+            }
+        }
+
+        public string TitleHeader
+        {
+            get
+            {
+                return content.TitleHeader();
+            }
+        }
+        public string AuthorHeader
+        {
+            get
+            {
+                return content.AuthorHeader();
+            }
+        }
+        public string PriceHeader
+        {
+            get
+            {
+                return content.PriceHeader();
+            }
+        }
+        public string LibraryHeader
+        {
+            get
+            {
+                return content.LibraryHeader();
             }
         }
         #endregion

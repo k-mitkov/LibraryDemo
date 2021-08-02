@@ -53,7 +53,7 @@ namespace LibraryDemo.DesktopClient.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;component/views/successfuladdedbookview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;V1.0.0.0;component/views/successfuladdedbookview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SuccessfulAddedBookView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

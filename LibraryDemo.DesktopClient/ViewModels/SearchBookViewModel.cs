@@ -3,6 +3,7 @@ using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -28,6 +29,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return searchCommand;
             }
         }
+
         public string KeyWord
         {
             get { return _keyWord; }
@@ -36,6 +38,23 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 _keyWord = value;
             }
         }
+
+        public string SelectContent
+        {
+            get
+            {
+                return content.SearchTitleText();
+            }
+        }
+
+        public string SearchButtonContent
+        {
+            get
+            {
+                return content.SearchButton();
+            }
+        }
+
         public UserControl CurentView
         {
             get
@@ -49,6 +68,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public string ErrMasage
         {
             get
@@ -70,10 +90,10 @@ namespace LibraryDemo.DesktopClient.ViewModels
         }
         public void Search(Object o)
         {
-            List<Book> books = context.SearchForBooks(_keyWord);
+            List<Book> books = context.SearchForBooks(_keyWord).ToList();
             if (books.Count == 0)
             {
-                ErrMasage = "Не са намерени книги!";
+                ErrMasage = content.ErrBooksNotFound();
                 CurentView = null;
             }
             else

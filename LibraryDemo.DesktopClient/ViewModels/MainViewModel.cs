@@ -1,6 +1,7 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -11,6 +12,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand bookCommand;
         private ActionCommand authorCommand;
         private ActionCommand libraryCommand;
+        private ActionCommand settingsCommand;
         private UserControl currentView;
         #endregion
 
@@ -50,6 +52,19 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return libraryCommand;
             }
         }
+
+        public ActionCommand SettingsCommand
+        {
+            get
+            {
+                if (settingsCommand == null)
+                {
+                    settingsCommand = new ActionCommand(Settings, CanExecuteShow);
+                }
+                return settingsCommand;
+            }
+        }
+
         public UserControl CurentView
         {
             get
@@ -63,6 +78,38 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string AuthorButtonContent
+        {
+            get
+            {
+                return content.AuthorsButton();
+            }
+        }
+
+        public string BookButtonContent
+        {
+            get
+            {
+                return content.BooksButton();
+            }
+        }
+
+        public string LibraryButtonContent
+        {
+            get
+            {
+                return content.LibrariesButton();
+            }
+        }
+        public string WindowTitle
+        {
+            get
+            {
+                return content.MainTitle();
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -96,6 +143,15 @@ namespace LibraryDemo.DesktopClient.ViewModels
             view.DataContext = viewModel;
             CurentView = view;
         }
+
+        public void Settings(Object o)
+        {
+            SettingsViewModel viewModel = new SettingsViewModel();
+            SettingsView view = new SettingsView();
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+
         #endregion
     }
 }

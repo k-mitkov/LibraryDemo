@@ -10,8 +10,8 @@
         <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfLibraries}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="420" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Address" Width="920" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="{Binding NameHeader}" Width="420" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="{Binding AddressHeader}" Width="920" DisplayMemberBinding="{Binding Address}" />
                 </GridView>
             </ListView.View>
         </ListView>

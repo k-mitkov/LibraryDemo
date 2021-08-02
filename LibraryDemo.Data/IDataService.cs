@@ -1,6 +1,7 @@
 ﻿using LibraryDemo.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LibraryDemo.Data
@@ -9,15 +10,15 @@ namespace LibraryDemo.Data
     {
         public Author AddNewAuthor(Author author);
         public Author FindAuthor(string name);
-        public List<Author> GetAuthors();
+        public IQueryable<Author> GetAuthors();
         public Library AddNewLibrary(Library library);
         public Library FindLibrary(string name);
-        public List<Library> GetLibraries();
+        public IQueryable<Library> GetLibraries();
         public Book AddNewBook(Book book);
-        public List<Book> GetBooksByLibraryId(int id);
-        public List<Book> GetBooksByAuthorId(int id);
-        public List<Book> GetBooks();
-        public List<Book> SearchForBooks(string keyWord);
+        public IQueryable<Book> GetBooksByLibraryId(int id);
+        public IQueryable<Book> GetBooksByAuthorId(int id);
+        public IQueryable<Book> GetBooks();
+        public IQueryable<Book> SearchForBooks(string keyWord);
         public bool DeleteBook(int id);
     }
 }

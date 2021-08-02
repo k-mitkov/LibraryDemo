@@ -13,12 +13,14 @@ namespace LibraryDemo.Data
         private bool disposed;
         #endregion
 
-        #region Methods
+        #region Constructor
         public BusinessContext()
         {
             context = new DataContext();
         }
+        #endregion
 
+        #region Methods
         public Author AddNewAuthor(Author author)
         {
             context.Authors.Add(author);
@@ -29,13 +31,13 @@ namespace LibraryDemo.Data
         public Author FindAuthor(string name)
         {
             Author author= context.Authors.FirstOrDefault((a) => a.Name.Equals(name));
-            author.Books = this.GetBooksByAuthorId(author.Id);
+            author.Books = this.GetBooksByAuthorId(author.Id).ToList();
             return author;
         }
 
-        public List<Author> GetAuthors()
+        public IQueryable<Author> GetAuthors()
         {
-            return context.Authors.ToList();
+            return context.Authors.AsQueryable();
         }
 
         public Library AddNewLibrary(Library library)
@@ -48,13 +50,13 @@ namespace LibraryDemo.Data
         public Library FindLibrary(string name)
         {
             Library library = context.Libraries.FirstOrDefault((l) => l.Name.Equals(name));
-            library.Books = this.GetBooksByLibraryId(library.Id);
+            library.Books = this.GetBooksByLibraryId(library.Id).ToList();
             return library;
         }
 
-        public List<Library> GetLibraries()
+        public IQueryable<Library> GetLibraries()
         {
-            return context.Libraries.ToList();
+            return context.Libraries.AsQueryable();
         }
 
         public Book AddNewBook(Book book)
@@ -64,19 +66,19 @@ namespace LibraryDemo.Data
 
             return book;
         }
-        public List<Book> GetBooksByLibraryId(int id)
+        public IQueryable<Book> GetBooksByLibraryId(int id)
         {
-            return context.Books.Include("Author").Include("Library").Where((b)=>b.Library.Id==id).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b)=>b.Library.Id==id).AsQueryable();
         }
 
-        public List<Book> GetBooksByAuthorId(int id)
+        public IQueryable<Book> GetBooksByAuthorId(int id)
         {
-            return context.Books.Include("Author").Include("Library").Where((b) => b.Author.Id == id).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b) => b.Author.Id == id).AsQueryable();
         }
 
-        public List<Book> GetBooks()
+        public IQueryable<Book> GetBooks()
         {
-            return context.Books.Include("Author").Include("Library").ToList();
+            return context.Books.Include("Author").Include("Library").AsQueryable();
         }
 
         public Book FindBook(string title)
@@ -84,9 +86,9 @@ namespace LibraryDemo.Data
             return context.Books.FirstOrDefault((b) => b.Library.Equals(title));
         }
 
-        public List<Book> SearchForBooks(string keyWord)
+        public IQueryable<Book> SearchForBooks(string keyWord)
         {
-            return context.Books.Include("Author").Include("Library").Where((b) => b.Title.Contains(keyWord)).ToList();
+            return context.Books.Include("Author").Include("Library").Where((b) => b.Title.Contains(keyWord)).AsQueryable();
         }
 
         public bool DeleteBook(int id)

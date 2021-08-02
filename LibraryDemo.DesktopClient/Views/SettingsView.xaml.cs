@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace LibraryDemo.DesktopClient.Views
 {
     /// <summary>
-    /// Interaction logic for BooksByLibraryView.xaml
+    /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class BooksByLibraryView : UserControl
+    public partial class SettingsView : UserControl
     {
-        public BooksByLibraryView()
+        public SettingsView()
         {
             InitializeComponent();
         }

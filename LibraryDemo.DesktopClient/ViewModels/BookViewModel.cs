@@ -89,6 +89,54 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return deleteBookCommand;
             }
         }
+
+        public string AllBooksButtonContent
+        {
+            get
+            {
+                return content.AllBooksButton();
+            }
+        }
+
+        public string BooksByAuthorButtonContent
+        {
+            get
+            {
+                return content.ByAuthorsButton();
+            }
+        }
+
+        public string BooksByLibraryButtonContent
+        {
+            get
+            {
+                return content.ByLibrariesButton();
+            }
+        }
+
+        public string SearchBookButtonContent
+        {
+            get
+            {
+                return content.SearchBookButton();
+            }
+        }
+
+        public string AddBookButtonContent
+        {
+            get
+            {
+                return content.AddBookButton();
+            }
+        }
+
+        public string DeleteBookButtonContent
+        {
+            get
+            {
+                return content.DeleteBookButton();
+            }
+        }
         public UserControl CurentView
         {
             get
@@ -122,7 +170,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         public void BooksByAuthor(Object o)
         {
             BooksByAuthorViewModel viewModel = new BooksByAuthorViewModel();
-            BooksByAuthorView view = new BooksByAuthorView();
+            BooksByView view = new BooksByView();
             view.DataContext = viewModel;
             CurentView = view;
 
@@ -131,7 +179,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         public void BooksByLibrary(Object o)
         {
             BooksByLibraryViewModel viewModel = new BooksByLibraryViewModel();
-            BooksByLibraryView view = new BooksByLibraryView();
+            BooksByView view = new BooksByView();
             view.DataContext = viewModel;
             CurentView = view;
         }

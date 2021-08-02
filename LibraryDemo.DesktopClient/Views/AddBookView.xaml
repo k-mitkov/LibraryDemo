@@ -9,11 +9,11 @@
     <Grid  Background="DarkSalmon">
         <StackPanel Margin="100">
             <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20">Заглавие</Label>
+                <Label FontSize="20" Content="{Binding TitleContent}"></Label>
                 <TextBox Text="{Binding Title}" Width="400" Height="50" FontSize="20"></TextBox>
             </StackPanel>
             <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20">Автор</Label>
+                <Label FontSize="20" Content="{Binding AuthorContent}"></Label>
                 <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfAuthors}" 
                       Width="400" Height="50" HorizontalAlignment="Left"
                       SelectedItem="{Binding Path=SAuthor}" >
@@ -27,11 +27,11 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20">Цена</Label>
+                <Label FontSize="20" Content="{Binding PriceContent}"></Label>
                 <TextBox Text="{Binding Price}" Width="400"  Height="50" FontSize="20"></TextBox>
             </StackPanel>
             <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20">Библиотека</Label>
+                <Label FontSize="20" Content="{Binding LibraryContent}"></Label>
                 <ComboBox Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" 
                       Width="400" Height="50" HorizontalAlignment="Left"
                       SelectedItem="{Binding Path=SLibrary}" >
@@ -45,7 +45,7 @@
                 </ComboBox>
             </StackPanel>
             <TextBlock Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-            <Button Width="400" Height="50" Content="Добави" FontSize="20" Command="{Binding Path=AddCommand}"/>
+            <Button Width="400" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
         </StackPanel>
         
         <ContentControl Content="{Binding CurentView}"/>

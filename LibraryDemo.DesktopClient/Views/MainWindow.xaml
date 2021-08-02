@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Icon="\images\bookIcon.png"
         WindowState="Maximized"
-        Title="Всички книги на едно място" Height="450" Width="800">
+        Title="{Binding WindowTitle}" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,37 +19,37 @@
 
         <ContentControl Content="{Binding CurentView}" Grid.Row="1"/>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name ="Authors" Content = "Автори"
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name ="Authors" Grid.Column="0" Content = "{Binding AuthorButtonContent}"
                         Command="{Binding Path=AuthorCommand}"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
                    Foreground="Black"
                    Background="Moccasin"
-                  
+                   HorizontalContentAlignment="Center"
                    FontSize="50"
-                   Cursor="Hand"
-                   Width="512"/>
-            <Button x:Name ="Books" Content = "Книги"
+                   Cursor="Hand"/>
+            <Button x:Name ="Books" Grid.Column="1" Content = "{Binding BookButtonContent}"
                         Command="{Binding Path=BookCommand}"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Center"
                    Foreground="Black"
                    Background="Moccasin"
-                  
                    FontSize="50"
-                   Cursor="Hand"
-                   Width="512"/>
-            <Button x:Name ="Libraries" Content = "Библиотеки"
+                   Cursor="Hand"/>
+            <Button x:Name ="Libraries" Grid.Column="2" Content = "{Binding LibraryButtonContent}"
                         Command="{Binding Path=LibraryCommand}"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Center"
                    Foreground="Black"
                    Background="Moccasin"
-                  
                    FontSize="50"
-                   Cursor="Hand"
-                   Width="512"/>
-        </StackPanel>
+                   Cursor="Hand"/>
+            <Button Grid.Column="3" Background="Moccasin" Command="{Binding Path=SettingsCommand}">
+                <Image Source="\images\settings.png"/>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

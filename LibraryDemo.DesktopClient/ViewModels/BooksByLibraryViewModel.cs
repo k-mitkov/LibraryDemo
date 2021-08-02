@@ -3,6 +3,7 @@ using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -10,27 +11,27 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public class BooksByLibraryViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaraion
-        private Library _slibrary;
+        private Library selected;
         private ActionCommand showCommand;
         private UserControl currentView;
         private string errMasage;
         #endregion
 
         #region Proparties
-        public List<Library> ListOfLibraries
+        public IEnumerable<Library> ListOfT
         {
             get
             {
-                return context.GetLibraries();
+                return context.GetLibraries().ToList();
             }
         }
 
-        public Library SLibrary
+        public Library Selected
         {
-            get { return _slibrary; }
+            get { return selected; }
             set
             {
-                _slibrary = value;
+                selected = value;
             }
         }
 
@@ -45,6 +46,23 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return showCommand;
             }
         }
+
+        public string SelectContent
+        {
+            get
+            {
+                return content.SelectLibrayText();
+            }
+        }
+
+        public string SearchButtonContent
+        {
+            get
+            {
+                return content.SearchButton();
+            }
+        }
+
         public UserControl CurentView
         {
             get
@@ -80,17 +98,17 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Show(Object o)
         {
-            if (_slibrary != null)
+            if (selected != null)
             {
                 ErrMasage = "";
-                ShowBooksByLibraryViewModel viewModel = new ShowBooksByLibraryViewModel(_slibrary);
+                ShowBooksByLibraryViewModel viewModel = new ShowBooksByLibraryViewModel(selected);
                 ShowBooksView view = new ShowBooksView();
                 view.DataContext = viewModel;
                 CurentView = view;
             }
             else
             {
-                ErrMasage = "Моля изберете библиотека";
+                ErrMasage = content.ErrSelectLibrary();
                 CurentView = null;
             }
             
