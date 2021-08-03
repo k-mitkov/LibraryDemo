@@ -16,5 +16,5 @@ C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.DesktopClient\App.xaml
 218306830959
 Views\AddBookView.xaml;Views\AuthorView.xaml;Views\BooksByView.xaml;Views\BookView.xaml;Views\DeleteBookView.xaml;Views\LibraryView.xaml;Views\MainWindow.xaml;Views\SearchBookView.xaml;Views\SettingsView.xaml;Views\ShowBooksView.xaml;Views\SuccessfulOperationView.xaml;
 
-True
+False
 
