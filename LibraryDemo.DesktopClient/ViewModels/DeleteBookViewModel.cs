@@ -108,7 +108,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             if (_sbook != null)
             {
                 context.DeleteBook(_sbook.Id);
-                SuccesfulDeletedBookViewModel viewModel = new SuccesfulDeletedBookViewModel();
+                SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccesfullyDeletedBook());
                 SuccessfulOperationView view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
                 CurentView = view;

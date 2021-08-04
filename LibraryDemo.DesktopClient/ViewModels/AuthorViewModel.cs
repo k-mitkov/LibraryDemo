@@ -1,50 +1,145 @@
-﻿using LibraryDemo.Data.Models;
-using System.Collections.Generic;
-using System.Linq;
+﻿using LibraryDemo.DesktopClient.Command;
+using LibraryDemo.DesktopClient.Views;
+using System;
+using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class AuthorViewModel : BaseViewModel
+    class AuthorViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaration
-        private IEnumerable<Author> listOfAuthors;
+        private ActionCommand allAuthorsCommand;
+        private ActionCommand searchAuthorCommand;
+        private ActionCommand addAuthorCommand;
+        private ActionCommand deleteAuthorCommand;
+        private UserControl currentView;
         #endregion
 
         #region Proparties
-        public IEnumerable<Author> ListOfAuthors
+        public ActionCommand AllAuthorsCommand
         {
             get
             {
-                if (listOfAuthors == null)
+                if (allAuthorsCommand == null)
                 {
-                    listOfAuthors = context.GetAuthors().ToList();
+                    allAuthorsCommand = new ActionCommand(AllAuthors, CanExecuteShow);
                 }
-                return listOfAuthors;
+                return allAuthorsCommand;
             }
         }
 
-        public string NameHeader
+        public ActionCommand SearchAuthorCommand
         {
             get
             {
-                return content.NameHeader();
+                if (searchAuthorCommand == null)
+                {
+                    searchAuthorCommand = new ActionCommand(Search, CanExecuteShow);
+                }
+                return searchAuthorCommand;
             }
         }
 
-        public string GenderHeader
+        public ActionCommand AddAuthorCommand
         {
             get
             {
-                return content.GenderHeader();
+                if (addAuthorCommand == null)
+                {
+                    addAuthorCommand = new ActionCommand(Add, CanExecuteShow);
+                }
+                return addAuthorCommand;
             }
         }
 
-        public string MailHeader
+        public ActionCommand DeleteAuthorCommand
         {
             get
             {
-                return content.MailHeader();
+                if (deleteAuthorCommand == null)
+                {
+                    deleteAuthorCommand = new ActionCommand(Delete, CanExecuteShow);
+                }
+                return deleteAuthorCommand;
             }
+        }
+
+        public string AllAuthorsButtonContent
+        {
+            get
+            {
+                return content.AllAuthors();
+            }
+        }
+
+        public string SearchAuthorButtonContent
+        {
+            get
+            {
+                return content.SearchAuthor();
+            }
+        }
+
+        public string AddAuthorButtonContent
+        {
+            get
+            {
+                return content.AddAuthor();
+            }
+        }
+
+        public string DeleteAuthorButtonContent
+        {
+            get
+            {
+                return content.DeleteAuthor();
+            }
+        }
+        public UserControl CurentView
+        {
+            get
+            {
+                return currentView;
+            }
+
+            set
+            {
+                currentView = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+
+        #region Methods
+        public bool CanExecuteShow(Object o)
+        {
+            return true;
+        }
+
+        public void AllAuthors(Object o)
+        {
+            ShowAuthorsViewModel viewModel = new ShowAuthorsViewModel();
+            ShowAuthorsView view = new ShowAuthorsView();
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+        public void Search(Object o)
+        {
+            SearchAuthorViewModel viewModel = new SearchAuthorViewModel();
+            SearchView view = new SearchView();
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+        public void Add(Object o)
+        {
+            AddAuthorViewModel viewModel = new AddAuthorViewModel();
+            AddAuthorView view = new AddAuthorView();
+            view.DataContext = viewModel;
+            CurentView = view;
+        }
+        public void Delete(Object o)
+        {
+
         }
         #endregion
     }

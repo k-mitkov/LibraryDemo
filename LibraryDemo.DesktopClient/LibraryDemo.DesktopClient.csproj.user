@@ -7,10 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AddAuthorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\AuthorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ShowAuthorsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\BooksByView.xaml.cs">
@@ -25,7 +31,7 @@
     <Compile Update="Views\LibraryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SearchBookView.xaml.cs">
+    <Compile Update="Views\SearchView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SettingsView.xaml.cs">
@@ -39,10 +45,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AddAuthorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AddBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AuthorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ShowAuthorsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\BooksByView.xaml">
@@ -60,7 +72,7 @@
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SearchBookView.xaml">
+    <Page Update="Views\SearchView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SettingsView.xaml">

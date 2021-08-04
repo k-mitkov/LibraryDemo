@@ -15,7 +15,6 @@
             </ComboBox>
             <Button Content="{Binding SaveButtonContent}" Command="{Binding Path=SaveCommand}" Background="Moccasin"
                     FontSize ="20" VerticalAlignment="Center" Width="250" Height="30" HorizontalAlignment="Left"/>
-            <TextBlock Text="{Binding ErrMasage}" Margin="10, 5, 0, 0" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </UserControl>

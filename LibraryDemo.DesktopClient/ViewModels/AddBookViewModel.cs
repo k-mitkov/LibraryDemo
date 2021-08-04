@@ -162,7 +162,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                     Library = _slibrary
                 };
                 context.AddNewBook(book);
-                SuccessfulAddedBookViewModel viewModel = new SuccessfulAddedBookViewModel();
+                SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedBook());
                 SuccessfulOperationView  view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
                 CurentView = view;

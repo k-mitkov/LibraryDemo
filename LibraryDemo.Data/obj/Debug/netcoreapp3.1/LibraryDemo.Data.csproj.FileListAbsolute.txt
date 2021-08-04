@@ -10,3 +10,15 @@ C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\Li
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.runtimeconfig.json
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.runtimeconfig.dev.json
 C:\Users\pc\source\repos\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.deps.json
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.runtimeconfig.json
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.runtimeconfig.dev.json
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\bin\Debug\netcoreapp3.1\LibraryDemo.Data.pdb
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.pdb
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.Data\obj\Debug\netcoreapp3.1\LibraryDemo.Data.genruntimeconfig.cache

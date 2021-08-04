@@ -99,7 +99,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             else
             {
                 ErrMasage = "";
-                ShowBooksByKeyWordViewModel viewModel = new ShowBooksByKeyWordViewModel(books);
+                ShowBooksViewModel viewModel = new ShowBooksViewModel(books);
                 ShowBooksView view = new ShowBooksView();
                 view.DataContext = viewModel;
                 CurentView = view;

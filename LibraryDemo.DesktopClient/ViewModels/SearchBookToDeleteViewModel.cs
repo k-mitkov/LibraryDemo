@@ -105,7 +105,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 ErrMasage = content.ErrBooksNotFound(); ;
                 CurentView = null;
             }
-
         }
         #endregion
     }

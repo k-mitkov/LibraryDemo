@@ -1,21 +1,22 @@
 ﻿using LibraryDemo.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.Data
 {
     public class DataContext : DbContext
     {
+        #region Proparties
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
-
         public DbSet<Library> Libraries { get; set; }
+        #endregion
+
+        #region Methods
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = (localdb)\\MSSQLLocalDB; Database = Library; Trusted_Connection = true;");
+            optionsBuilder.UseSqlServer("Server = localhost; Database = Library; User = sa; Password = Micr0!nvest; Trusted_Connection = true; Integrated Security=False");
             base.OnConfiguring(optionsBuilder);
         }
+        #endregion
     }
 }

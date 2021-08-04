@@ -19,6 +19,7 @@ namespace LibraryDemo.Data
         public IQueryable<Book> GetBooksByAuthorId(int id);
         public IQueryable<Book> GetBooks();
         public IQueryable<Book> SearchForBooks(string keyWord);
+        public IQueryable<Author> SearchForAutors(string keyWord);
         public bool DeleteBook(int id);
     }
 }

@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="LibraryDemo.DesktopClient.Views.AddAuthorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryDemo.DesktopClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid  Background="DarkSalmon">
+        <StackPanel Margin="100">
+            
+            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+                <Label FontSize="20" Content="{Binding NameContent}"></Label>
+                <TextBox Text="{Binding Name}" Width="400" Height="50" FontSize="20"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+                <Label FontSize="20" Content="{Binding GenderContent}"></Label>
+                <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfGenders}" 
+                      Width="400" Height="50" HorizontalAlignment="Left"
+                      SelectedItem="{Binding Path=SGender}" >
+                </ComboBox>
+            </StackPanel>
+            
+            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+                <Label FontSize="20" Content="{Binding MailContent}"></Label>
+                <TextBox Text="{Binding Mail}" Width="400"  Height="50" FontSize="20"></TextBox>
+            </StackPanel>
+            
+            <TextBlock Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
+            <Button Width="400" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+        </StackPanel>
+
+        <ContentControl Content="{Binding CurentView}"/>
+    </Grid>
+</UserControl>

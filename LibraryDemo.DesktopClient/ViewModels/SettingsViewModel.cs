@@ -1,9 +1,7 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Resources.AppTextContent;
-using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,23 +11,21 @@ namespace LibraryDemo.DesktopClient.ViewModels
     {
 
         #region Declaration
-        private string s_language;
-        private string errMasage;
+        private Languages s_language;
         private ActionCommand saveCommand;
         private UserControl currentView;
         #endregion
 
         #region Proparties
-        public IEnumerable<string> ListOfLanguages
+        public IEnumerable<Languages> ListOfLanguages
         {
             get
             {
-                List<string> languages = new List<string> { "English", "Български"};
-                return languages;
+                return AppContent.GetLanguages();
             }
         }
 
-        public string Slanguage
+        public Languages Slanguage
         {
             get { return s_language; }
             set
@@ -54,18 +50,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public string ErrMasage
-        {
-            get
-            {
-                return errMasage;
-            }
-            set
-            {
-                errMasage = value;
-                OnPropertyChanged();
-            }
-        }
         public ActionCommand SaveCommand
         {
             get
@@ -102,16 +86,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Save(Object o)
         {
-            if (s_language != null)
-            {
-                ErrMasage = "";
-                AppContent.SetLanguage(Slanguage);
-                Application.Current.MainWindow.DataContext = new MainViewModel();
-            }
-            else
-            {
-                ErrMasage = content.ErrSelectLanguage();
-            }
+            AppContent.SetLanguage(Slanguage);
+            Application.Current.MainWindow.DataContext = new MainViewModel();
+            
         }
         #endregion
     }

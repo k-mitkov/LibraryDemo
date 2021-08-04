@@ -34,6 +34,11 @@ namespace LibraryDemo.Data
             return author;
         }
 
+        public IQueryable<Author> SearchForAutors(string keyWord)
+        {
+            return context.Authors.Include("Books").Where(a => a.Name.Contains(keyWord)).AsQueryable();
+        }
+
         public IQueryable<Author> GetAuthors()
         {
             return context.Authors.AsQueryable();

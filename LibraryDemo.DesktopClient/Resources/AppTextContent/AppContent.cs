@@ -1,21 +1,32 @@
-﻿using System;
+﻿
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.Resources.AppTextContent
 {
     public class AppContent : IContent
     {
         #region Declaration
-        private static string language = "bg";
+        private static Languages language = Languages.Български;
         #endregion
 
         #region Methods
+        public string AddAuthor()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Добави автор";
+                default:
+                    return "Add author";
+            }
+        }
+
         public string AddBookButton()
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Добави книга";
                 default:
                     return "Add book";
@@ -26,7 +37,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Добави";
                 default:
                     return "Add";
@@ -37,10 +48,21 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Адрес";
                 default:
                     return "Address";
+            }
+        }
+
+        public string AllAuthors()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Всички автори";
+                default:
+                    return "All authors";
             }
         }
 
@@ -48,7 +70,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Всички книги";
                 default:
                     return "All books";
@@ -59,7 +81,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Автор";
                 default:
                     return "Author";
@@ -70,7 +92,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Автори";
                 default:
                     return "Authors";
@@ -81,7 +103,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Книги";
                 default:
                     return "Books";
@@ -92,7 +114,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Книги по автори";
                 default:
                     return "Books by authors";
@@ -103,10 +125,20 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Книги по библиотеки";
                 default:
                     return "Books by libraries";
+            }
+        }
+        public string DeleteAuthor()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Изтрий автор";
+                default:
+                    return "Delete author";
             }
         }
 
@@ -114,7 +146,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изтрий книга";
                 default:
                     return "Delete book";
@@ -125,10 +157,20 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изтрий";
                 default:
                     return "Delete";
+            }
+        }
+        public string ErrAuthorNotFound()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Не са намерени автори!";
+                default:
+                    return "No authors found!";
             }
         }
 
@@ -136,7 +178,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Не са намерени книги!";
                 default:
                     return "No books found!";
@@ -147,7 +189,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Моля изберете автор!";
                 default:
                     return "Please select an author!";
@@ -158,10 +200,21 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Моля изберете книга!";
                 default:
                     return "Please choose a book!";
+            }
+        }
+
+        public string ErrSelectGender()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Моля изберете пол!";
+                default:
+                    return "Please choose a gender!";
             }
         }
 
@@ -169,7 +222,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Моля изберете библиотека!";
                 default:
                     return "Please select a library!";
@@ -180,7 +233,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Цената тябва да е по-голяма от 0 и изписана с цифри.";
                 default:
                     return "The price must be greater than 0 and written in numbers.";
@@ -191,10 +244,32 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Заглавието трябва да е поне 3 символа.";
                 default:
                     return "The title must be at least 3 characters.";
+            }
+        }
+
+        public string ErrSelectName()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Имаето трябва да е поне 3 символа.";
+                default:
+                    return "The name must be at least 3 characters.";
+            }
+        }
+
+        public string ErrSelectMail()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Моля въведете валиден имайл.";
+                default:
+                    return "Please enter valid mail.";
             }
         }
 
@@ -202,7 +277,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Пол";
                 default:
                     return "Gender";
@@ -213,7 +288,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Библиотеки";
                 default:
                     return "Libraries";
@@ -224,7 +299,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Библиотека";
                 default:
                     return "Library";
@@ -235,7 +310,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Имейл";
                 default:
                     return "Mail";
@@ -246,7 +321,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Всички книги на едно място";
                 default:
                     return "All books in one place";
@@ -257,7 +332,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Име";
                 default:
                     return "Name";
@@ -268,10 +343,20 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Цена";
                 default:
                     return "Price";
+            }
+        }
+        public string SearchAuthor()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Търси автор";
+                default:
+                    return "Search author";
             }
         }
 
@@ -279,7 +364,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Търси книга";
                 default:
                     return "Search book";
@@ -290,7 +375,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Търси";
                 default:
                     return "Search";
@@ -301,10 +386,21 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Търсете заглавие: ";
                 default:
                     return "Search title: ";
+            }
+        }
+
+        public string SearchByName()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Търсете по име: ";
+                default:
+                    return "Search by name: ";
             }
         }
 
@@ -312,7 +408,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изберете автор: ";
                 default:
                     return "Select author: ";
@@ -323,7 +419,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изберете книга: ";
                 default:
                     return "Select book: ";
@@ -334,7 +430,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изберете библиотека: ";
                 default:
                     return "Select library: ";
@@ -345,7 +441,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Книгата е изтрита успешно!";
                 default:
                     return "The book has been deleted successfully!";
@@ -356,7 +452,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Книгата е добавена успешно!";
                 default:
                     return "The book has been added successfully!";
@@ -367,7 +463,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Заглавие";
                 default:
                     return "Title";
@@ -378,7 +474,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Запази";
                 default:
                     return "Save";
@@ -389,7 +485,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Изберете език: ";
                 default:
                     return "Choose a language: ";
@@ -400,27 +496,47 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         {
             switch (language)
             {
-                case "bg":
+                case Languages.Български:
                     return "Моля изберете език!";
                 default:
                     return "Please select a language!";
             }
         }
 
-        public static void SetLanguage(string language)
+        public IEnumerable<string> Genders()
         {
+            List<string> genders = new List<string>();
             switch (language)
             {
-                case "Български":
-                    AppContent.language = "bg";
-                    break;
-                case "English":
-                    AppContent.language = "en";
-                    break;
+                case Languages.Български:
+                    genders.Add("male");
+                    genders.Add("female");
+                    return genders;
                 default:
-                    AppContent.language = "en";
-                    break;
+                    genders.Add("Male");
+                    genders.Add("Female");
+                    return genders;
             }
+        }
+
+        public char GenderTranslate(string gender)
+        {
+            if (gender.Equals("Male") || gender.Equals("male")){
+                return 'm';
+            }
+            return 'f';
+        }
+
+        public static void SetLanguage(Languages slanguage)
+        {
+            language = slanguage;
+        }
+        public static IEnumerable<Languages> GetLanguages()
+        {
+            List<Languages> languages = new List<Languages>();
+            languages.Add(Languages.English);
+            languages.Add(Languages.Български);
+            return languages;
         }
         #endregion
     }

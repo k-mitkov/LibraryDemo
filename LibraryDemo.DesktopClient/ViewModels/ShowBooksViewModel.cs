@@ -1,19 +1,23 @@
 ﻿using LibraryDemo.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class ShowBooksByLibraryViewModel : BaseViewModel
+    class ShowBooksViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaration
-        private Library library;
+        private IEnumerable<Book> books;
         #endregion
 
-        #region Constructor
-        public ShowBooksByLibraryViewModel(Library library)
+        #region Constuctor
+        public ShowBooksViewModel() { }
+
+        public ShowBooksViewModel(IEnumerable<Book> books)
         {
-            this.library = library;
+            this.books = books;
         }
         #endregion
 
@@ -22,7 +26,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return context.GetBooksByLibraryId(library.Id).ToList();
+                if (books == null)
+                {
+                    books = context.GetBooks().ToList();
+                }
+                return books;
             }
         }
 

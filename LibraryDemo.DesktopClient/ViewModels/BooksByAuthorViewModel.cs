@@ -101,7 +101,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             if (selected!=null)
             {
                 ErrMasage = "";
-                ShowBooksByAuthorViewModel viewModel = new ShowBooksByAuthorViewModel(selected);
+                ShowBooksViewModel viewModel = new ShowBooksViewModel(context.GetBooksByAuthorId(selected.Id).ToList());
                 ShowBooksView view = new ShowBooksView();
                 view.DataContext = viewModel;
                 CurentView = view;

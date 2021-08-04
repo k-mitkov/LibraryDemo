@@ -160,7 +160,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void AllBooks(Object o)
         {
-            AllBooksViewModel viewModel = new AllBooksViewModel();
+            ShowBooksViewModel viewModel = new ShowBooksViewModel();
             ShowBooksView view = new ShowBooksView();
             view.DataContext = viewModel;
             CurentView = view;
@@ -195,7 +195,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         public void SearchBook(Object o)
         {
             SearchBookViewModel viewModel = new SearchBookViewModel();
-            SearchBookView view = new SearchBookView();
+            SearchView view = new SearchView();
             view.DataContext = viewModel;
             CurentView = view;
         }
@@ -203,7 +203,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         public void DeleteBook(Object o)
         {
             SearchBookToDeleteViewModel viewModel = new SearchBookToDeleteViewModel();
-            SearchBookView view = new SearchBookView();
+            SearchView view = new SearchView();
             view.DataContext = viewModel;
             CurentView = view;
         }

@@ -1,21 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace LibraryDemo.DesktopClient.Command
 {
     public class ActionCommand : ICommand
     {
+        #region Declaration
         private readonly Action<object> execute;
         private readonly Func<object, bool> canExecute;
+        #endregion
 
+        #region Constructor
         public ActionCommand(Action<object> action, Func<object, bool> func)
         {
             execute = action;
             canExecute = func;
         }
+        #endregion
 
+        #region Proparties
+        public event EventHandler CanExecuteChanged
+        {
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+            }
+        }
+        #endregion
+
+        #region Methods
         public bool CanExecute(object parameter)
         {
             if (canExecute != null)
@@ -32,17 +49,6 @@ namespace LibraryDemo.DesktopClient.Command
         {
             execute(parameter);
         }
-
-        public event EventHandler CanExecuteChanged
-        {
-            add
-            {
-                CommandManager.RequerySuggested += value;
-            }
-            remove
-            {
-                CommandManager.RequerySuggested -= value;
-            }
-        }
+        #endregion
     }
 }
