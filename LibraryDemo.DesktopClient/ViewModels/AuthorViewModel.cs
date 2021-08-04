@@ -139,7 +139,10 @@ namespace LibraryDemo.DesktopClient.ViewModels
         }
         public void Delete(Object o)
         {
-
+            SearchAuthorToDeleteViewModel viewModel = new SearchAuthorToDeleteViewModel();
+            SearchView view = new SearchView();
+            view.DataContext = viewModel;
+            CurentView = view;
         }
         #endregion
     }

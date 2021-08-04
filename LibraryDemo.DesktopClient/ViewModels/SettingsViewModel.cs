@@ -3,17 +3,15 @@ using LibraryDemo.DesktopClient.Resources.AppTextContent;
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class SettingsViewModel : BaseNotifyPropertyChangedViewModel
+    class SettingsViewModel : BaseViewModel
     {
 
         #region Declaration
         private Languages s_language;
         private ActionCommand saveCommand;
-        private UserControl currentView;
         #endregion
 
         #region Proparties
@@ -59,21 +57,6 @@ namespace LibraryDemo.DesktopClient.ViewModels
                     saveCommand = new ActionCommand(Save, CanExecuteShow);
                 }
                 return saveCommand;
-            }
-        }
-
-
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
             }
         }
         #endregion

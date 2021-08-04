@@ -44,6 +44,18 @@ namespace LibraryDemo.Data
             return context.Authors.AsQueryable();
         }
 
+        public bool DeleteAuthor(int id)
+        {
+            context.Authors.Remove(context.Authors.Find(id));
+            foreach(Book book in this.GetBooksByAuthorId(id))
+            {
+                context.Books.Remove(book);
+            }
+            context.SaveChanges();
+
+            return true;
+        }
+
         public Library AddNewLibrary(Library library)
         {
             context.Libraries.Add(library);
@@ -99,6 +111,7 @@ namespace LibraryDemo.Data
         {
             context.Books.Remove(context.Books.Find(id));
             context.SaveChanges();
+
             return true;
         }
         #endregion

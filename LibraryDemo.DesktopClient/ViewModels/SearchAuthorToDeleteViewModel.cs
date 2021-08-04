@@ -1,21 +1,19 @@
 ﻿using LibraryDemo.Data.Models;
-using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class SearchBookToDeleteViewModel : BaseSearchViewModel
+    class SearchAuthorToDeleteViewModel : BaseSearchViewModel
     {
         #region Proparties 
         public string SelectContent
         {
             get
             {
-                return content.SearchTitleText();
+                return content.SearchByName();
             }
         }
         #endregion
@@ -23,18 +21,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #region Methods
         public override void Search(Object o)
         {
-            List<Book> books = context.SearchForBooks(_keyWord).ToList();
-            if (books.Count!=0)
+            List<Author> authors = context.SearchForAutors(_keyWord).ToList();
+            if (authors.Count != 0)
             {
                 ErrMasage = "";
-                DeleteBookViewModel viewModel = new DeleteBookViewModel(books);
-                DeleteBookView view = new DeleteBookView();
+                DeleteAuthorViewModel viewModel = new DeleteAuthorViewModel(authors);
+                DeleteAuthorView view = new DeleteAuthorView();
                 view.DataContext = viewModel;
                 CurentView = view;
             }
             else
             {
-                ErrMasage = content.ErrBooksNotFound(); ;
+                ErrMasage = content.ErrAuthorNotFound(); ;
                 CurentView = null;
             }
         }
