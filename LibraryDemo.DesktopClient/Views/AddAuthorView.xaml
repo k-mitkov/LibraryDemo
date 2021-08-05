@@ -7,29 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid  Background="DarkSalmon">
-        <StackPanel Margin="100">
-            
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding NameContent}"></Label>
-                <TextBox Text="{Binding Name}" Width="400" Height="50" FontSize="20"></TextBox>
-            </StackPanel>
-            
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding GenderContent}"></Label>
-                <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfGenders}" 
-                      Width="400" Height="50" HorizontalAlignment="Left"
-                      SelectedItem="{Binding Path=SGender}" >
-                </ComboBox>
-            </StackPanel>
-            
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding MailContent}"></Label>
-                <TextBox Text="{Binding Mail}" Width="400"  Height="50" FontSize="20"></TextBox>
-            </StackPanel>
-            
-            <TextBlock Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-            <Button Width="400" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="2" FontSize="20" Content="{Binding NameContent}" VerticalAlignment="Top"></Label>
+            <TextBox Grid.Row="2" Text="{Binding Name}" Width="auto" VerticalAlignment="Center" Height="50" FontSize="20"></TextBox>
+
+
+            <Label Grid.Row="3" FontSize="20" VerticalAlignment="Top" Content="{Binding GenderContent}"></Label>
+            <ComboBox Grid.Row="3" Name="Authors" VerticalAlignment="Center" ItemsSource="{Binding Path= ListOfGenders}" 
+                      Height="50" SelectedItem="{Binding Path=SGender}" >
+            </ComboBox>
+
+            <Label Grid.Row="4" FontSize="20" VerticalAlignment="Top" Content="{Binding MailContent}"></Label>
+            <TextBox Grid.Row="4" Text="{Binding Mail}" VerticalAlignment="Center" Width="auto" Height="50" FontSize="20"></TextBox>
+
+            <TextBlock Grid.Row="5" Text="{Binding ErrMasage}" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
+            <Button Grid.Row="5" Height="50" Content="{Binding AddButtonContent}" VerticalAlignment="Center" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+        </Grid>
 
         <ContentControl Content="{Binding CurentView}"/>
     </Grid>

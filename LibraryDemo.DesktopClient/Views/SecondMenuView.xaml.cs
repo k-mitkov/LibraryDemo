@@ -16,9 +16,9 @@ namespace LibraryDemo.DesktopClient.Views
     /// <summary>
     /// Interaction logic for AuthorView.xaml
     /// </summary>
-    public partial class AuthorView : UserControl
+    public partial class SecondMenuView : UserControl
     {
-        public AuthorView()
+        public SecondMenuView()
         {
             InitializeComponent();
         }

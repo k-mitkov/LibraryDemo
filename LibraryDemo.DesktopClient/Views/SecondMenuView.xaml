@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LibraryDemo.DesktopClient.Views.AuthorView"
+﻿<UserControl x:Class="LibraryDemo.DesktopClient.Views.SecondMenuView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -25,8 +25,8 @@
 
             <Image Source="\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
-            <Button Grid.Row="1" Content = "{Binding AllAuthorsButtonContent}"
-                   Command="{Binding Path=AllAuthorsCommand}"
+            <Button Grid.Row="1" Content = "{Binding ShowAllButtonContent}"
+                   Command="{Binding Path=ShowAllCommand}"
                    Foreground="Black"
                    Background="DarkSalmon"
                    HorizontalContentAlignment="Center"
@@ -41,8 +41,8 @@
             </Grid.RowDefinitions>
             <Image Source="\images\addBook.jpg" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
-            <Button Grid.Row="1" Content = "{Binding AddAuthorButtonContent}"
-                        Command="{Binding Path=AddAuthorCommand}"
+            <Button Grid.Row="1" Content = "{Binding AddButtonContent}"
+                        Command="{Binding Path=AddCommand}"
                         HorizontalContentAlignment="Center"
                         Foreground="Black"
                         Background="DarkSalmon"
@@ -58,8 +58,8 @@
 
             <Image Source="\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
-            <Button Grid.Row="1" Content = "{Binding DeleteAuthorButtonContent}"
-                        Command="{Binding Path=DeleteAuthorCommand}"
+            <Button Grid.Row="1" Content = "{Binding DeleteButtonContent}"
+                        Command="{Binding Path=DeleteCommand}"
                             HorizontalContentAlignment="Center"
                             Foreground="Black"
                             Background="DarkSalmon"
@@ -75,8 +75,8 @@
 
             <Image Source="\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
 
-            <Button Grid.Row="1" Content = "{Binding SearchAuthorButtonContent}"
-                        Command="{Binding Path=SearchAuthorCommand}"  
+            <Button Grid.Row="1" Content = "{Binding SearchButtonContent}"
+                        Command="{Binding Path=SearchCommand}"  
                         Foreground="Black"
                         Background="DarkSalmon"
                         HorizontalContentAlignment="Center"

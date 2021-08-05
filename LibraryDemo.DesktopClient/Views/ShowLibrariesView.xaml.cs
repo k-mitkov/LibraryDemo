@@ -16,9 +16,9 @@ namespace LibraryDemo.DesktopClient.Views
     /// <summary>
     /// Interaction logic for LibraryView.xaml
     /// </summary>
-    public partial class LibraryView : UserControl
+    public partial class ShowLibrariesView : UserControl
     {
-        public LibraryView()
+        public ShowLibrariesView()
         {
             InitializeComponent();
         }

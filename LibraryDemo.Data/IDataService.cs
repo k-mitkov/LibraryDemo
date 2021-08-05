@@ -14,6 +14,8 @@ namespace LibraryDemo.Data
         public Library AddNewLibrary(Library library);
         public Library FindLibrary(string name);
         public IQueryable<Library> GetLibraries();
+        public IQueryable<Library> SearchForLibraries(string keyWord);
+        public bool DeleteLibrary(int id);
         public Book AddNewBook(Book book);
         public IQueryable<Book> GetBooksByLibraryId(int id);
         public IQueryable<Book> GetBooksByAuthorId(int id);

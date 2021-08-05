@@ -143,11 +143,9 @@ C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bi
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\LibraryDemo.Data.pdb
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient.csproj.AssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddBookView.g.cs
-C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AuthorView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BooksByView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BookView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\DeleteBookView.g.cs
-C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\LibraryView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\MainWindow.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SettingsView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.g.cs
@@ -157,11 +155,9 @@ C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\ob
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient_MarkupCompile.cache
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient_MarkupCompile.lref
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddBookView.baml
-C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AuthorView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BooksByView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\BookView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\DeleteBookView.baml
-C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\LibraryView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\MainWindow.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SettingsView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowBooksView.baml
@@ -180,3 +176,11 @@ C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\ob
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SearchView.baml
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddAuthorView.g.cs
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddAuthorView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SecondMenuView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\SecondMenuView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowLibrariesView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ShowLibrariesView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddLibraryView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\AddLibraryView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\DeleteView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\DeleteView.baml

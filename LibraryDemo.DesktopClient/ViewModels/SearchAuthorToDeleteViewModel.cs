@@ -26,7 +26,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             {
                 ErrMasage = "";
                 DeleteAuthorViewModel viewModel = new DeleteAuthorViewModel(authors);
-                DeleteAuthorView view = new DeleteAuthorView();
+                DeleteView view = new DeleteView();
                 view.DataContext = viewModel;
                 CurentView = view;
             }

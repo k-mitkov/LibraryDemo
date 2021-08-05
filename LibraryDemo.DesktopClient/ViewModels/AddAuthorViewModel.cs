@@ -137,7 +137,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 };
 
                 context.AddNewAuthor(author);
-                SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedBook());
+                SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedAuthor());
                 SuccessfulOperationView view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
                 CurentView = view;

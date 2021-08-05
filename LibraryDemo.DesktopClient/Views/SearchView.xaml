@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="20" Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Margin="20,20,20,0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="{Binding SelectContent}" FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Text="{Binding KeyWord}" Background="WhiteSmoke" Height="30" Width="550" FontSize="20" />
             <Button Content="{Binding SearchButtonContent}" Command="{Binding Path=SearchCommand}"  Background="Moccasin"

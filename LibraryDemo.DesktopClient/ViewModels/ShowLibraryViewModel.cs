@@ -4,10 +4,19 @@ using System.Linq;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class LibraryViewModel : BaseViewModel
+    public class ShowLibraryViewModel : BaseViewModel
     {
         #region Declaration
         private IEnumerable<Library> listOfLibraries;
+        #endregion
+
+        #region Constructor
+        public ShowLibraryViewModel() { }
+
+        public ShowLibraryViewModel(IEnumerable<Library> listOfLibraries)
+        {
+            this.listOfLibraries = listOfLibraries;
+        }
         #endregion
 
         #region Proparties

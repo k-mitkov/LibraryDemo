@@ -26,8 +26,8 @@
 
                 <Image Source="\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
                 
-                <Button x:Name ="AllBooks" Grid.Row="1" Content = "{Binding AllBooksButtonContent}"
-                   Command="{Binding Path=AllBooksCommand}"
+                <Button x:Name ="AllBooks" Grid.Row="1" Content = "{Binding ShowAllButtonContent}"
+                   Command="{Binding Path=ShowAllCommand}"
                    Foreground="Black"
                    Background="DarkSalmon"
                    HorizontalContentAlignment="Center"
@@ -77,8 +77,8 @@
 
             <Image Source="\images\addBook.jpg"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
-            <Button x:Name ="AddBook" Grid.Row="1" Content = "{Binding AddBookButtonContent}"
-                        Command="{Binding Path=AddBookCommand}"
+            <Button x:Name ="AddBook" Grid.Row="1" Content = "{Binding AddButtonContent}"
+                        Command="{Binding Path=AddCommand}"
                             HorizontalContentAlignment="Center"
                             Foreground="Black"
                             Background="DarkSalmon"
@@ -94,8 +94,8 @@
 
             <Image Source="\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
             
-            <Button x:Name ="SearchBook" Grid.Row="1" Content = "{Binding SearchBookButtonContent}"
-                        Command="{Binding Path=SearchBookCommand}"  
+            <Button x:Name ="SearchBook" Grid.Row="1" Content = "{Binding SearchButtonContent}"
+                        Command="{Binding Path=SearchCommand}"  
                         Foreground="Black"
                         Background="DarkSalmon"
                         HorizontalContentAlignment="Center"
@@ -111,8 +111,8 @@
             
             <Image Source="\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
-            <Button x:Name ="DeleteBook" Grid.Row="1" Content = "{Binding DeleteBookButtonContent}"
-                        Command="{Binding Path=DeleteBookCommand}"
+            <Button x:Name ="DeleteBook" Grid.Row="1" Content = "{Binding DeleteButtonContent}"
+                        Command="{Binding Path=DeleteCommand}"
                             HorizontalContentAlignment="Center"
                             Foreground="Black"
                             Background="DarkSalmon"

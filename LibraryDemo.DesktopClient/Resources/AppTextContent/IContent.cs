@@ -7,7 +7,9 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
     public interface IContent
     {
         public string AllAuthors();
+        public string AllLibraries();
         public string AddAuthor();
+        public string AddLibrary();
         public string AuthorsButton();
         public string SaveButton();
         public string BooksButton();
@@ -21,6 +23,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         public string AddBookButton();
         public string SearchBookButton();
         public string DeleteAuthor();
+        public string DeleteLibrary();
         public string DeleteBookButton();
         public string NameHeader();
         public string GenderHeader();
@@ -33,6 +36,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         public string SelectAuthorText();
         public string SelectLibrayText();
         public string SearchAuthor();
+        public string SearchLibrary();
         public string SearchByName();
         public string SelectBookText();
         public string SelectLanguageText();
@@ -47,11 +51,19 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         public string ErrSelectLibrary();
         public string ErrSelectBook();
         public string ErrSelectLanguage();
+        public string ErrSelectAddress();
         public string ErrAuthorNotFound();
         public string ErrBooksNotFound();
+        public string ErrLibrariesNotFound();
+        public string SuccessfullyAddedAuthor();
         public string SuccessfullyAddedBook();
+        public string SuccessfullyAddedLibrary();
+        public string SuccesfullyDeletedAuthor();
+        public string SuccesfullyDeletedLibrary();
         public string SuccesfullyDeletedBook();
         public IEnumerable<string> Genders();
         public char GenderTranslate(string gender);
+        public string WarningAuthorDelete();
+        public string WarningLibraryDelete();
     }
 }

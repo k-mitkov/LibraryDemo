@@ -61,7 +61,7 @@ namespace LibraryDemo.DesktopClient.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;V1.0.0.0;component/views/deletebookview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LibraryDemo.DesktopClient;component/views/deletebookview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\DeleteBookView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

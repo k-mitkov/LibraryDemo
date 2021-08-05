@@ -33,6 +33,17 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
+        public string AddLibrary()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Добави библиотека";
+                default:
+                    return "Add library";
+            }
+        }
+
         public string AddButton()
         {
             switch (language)
@@ -74,6 +85,16 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "Всички книги";
                 default:
                     return "All books";
+            }
+        }
+        public string AllLibraries()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Всички библиотеки";
+                default:
+                    return "All libraries";
             }
         }
 
@@ -153,6 +174,17 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
+        public string DeleteLibrary()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Изтрий библиотека";
+                default:
+                    return "Delete library";
+            }
+        }
+
         public string DeleteButton()
         {
             switch (language)
@@ -182,6 +214,17 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "Не са намерени книги!";
                 default:
                     return "No books found!";
+            }
+        }
+
+        public string ErrLibrariesNotFound()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Не са намерени библиотеки!";
+                default:
+                    return "No libraries found!";
             }
         }
 
@@ -270,6 +313,16 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "Моля въведете валиден имайл.";
                 default:
                     return "Please enter valid mail.";
+            }
+        }
+        public string ErrSelectAddress()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Моля въведете валиден адрес.";
+                default:
+                    return "Please enter valid address.";
             }
         }
 
@@ -371,6 +424,17 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
+        public string SearchLibrary()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Търси библиотека";
+                default:
+                    return "Search library";
+            }
+        }
+
         public string SearchButton()
         {
             switch (language)
@@ -447,6 +511,27 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "The book has been deleted successfully!";
             }
         }
+        public string SuccesfullyDeletedAuthor()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Автора е изтрит успешно!";
+                default:
+                    return "The author has been deleted successfully!";
+            }
+        }
+
+        public string SuccesfullyDeletedLibrary()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Библиотеката е изтрита успешно!";
+                default:
+                    return "The library has been deleted successfully!";
+            }
+        }
 
         public string SuccessfullyAddedBook()
         {
@@ -456,6 +541,28 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "Книгата е добавена успешно!";
                 default:
                     return "The book has been added successfully!";
+            }
+        }
+
+        public string SuccessfullyAddedAuthor()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Авторът е добавен успешно!";
+                default:
+                    return "The author has been added successfully!";
+            }
+        }
+
+        public string SuccessfullyAddedLibrary()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Библиотеката е добавена успешно!";
+                default:
+                    return "The library has been added successfully!";
             }
         }
 
@@ -500,6 +607,26 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
                     return "Моля изберете език!";
                 default:
                     return "Please select a language!";
+            }
+        }
+        public string WarningAuthorDelete()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Сигурни ли сте че искате да изтриете този автор? Така ще изтриете и всички негови книги!!!";
+                default:
+                    return "Are you sure you want to delete this author? This will delete all his books!!!";
+            }
+        }
+        public string WarningLibraryDelete()
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return "Сигурни ли сте че искате да изтриете тази библиотека? Така ще изтриете и всички книги в нея!!!";
+                default:
+                    return "Are you sure you want to delete this library? This will delete all books in it!!!";
             }
         }
 

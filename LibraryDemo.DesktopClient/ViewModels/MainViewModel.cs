@@ -120,7 +120,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Books(Object o)
         {
-            BookViewModel viewModel = new BookViewModel();
+            BookMenuViewModel viewModel = new BookMenuViewModel();
             BookView view = new BookView();
             view.DataContext = viewModel;
             CurentView = view;
@@ -129,8 +129,8 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Authors(Object o)
         {
-            AuthorViewModel viewModel = new AuthorViewModel();
-            AuthorView view = new AuthorView();
+            AuthorMenuViewModel viewModel = new AuthorMenuViewModel();
+            SecondMenuView view = new SecondMenuView();
             view.DataContext = viewModel;
             CurentView= view;
 
@@ -138,8 +138,8 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Libraries(Object o)
         {
-            LibraryViewModel viewModel = new LibraryViewModel();
-            LibraryView view = new LibraryView();
+            LibrayMenuViewModel viewModel = new LibrayMenuViewModel();
+            SecondMenuView view = new SecondMenuView();
             view.DataContext = viewModel;
             CurentView = view;
         }

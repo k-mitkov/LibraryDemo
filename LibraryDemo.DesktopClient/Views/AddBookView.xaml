@@ -7,15 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid  Background="DarkSalmon">
-        <StackPanel Margin="100">
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding TitleContent}"></Label>
-                <TextBox Text="{Binding Title}" Width="400" Height="50" FontSize="20"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding AuthorContent}"></Label>
-                <ComboBox Name="Authors" ItemsSource="{Binding Path= ListOfAuthors}" 
-                      Width="400" Height="50" HorizontalAlignment="Left"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" FontSize="20" Content="{Binding TitleContent}" VerticalAlignment="Top"></Label>
+                <TextBox Grid.Row="1" Text="{Binding Title}" Height="50" FontSize="20" VerticalAlignment="Center"></TextBox>
+
+                <Label Grid.Row="2" FontSize="20" Content="{Binding AuthorContent}" VerticalAlignment="Top"></Label>
+                <ComboBox Grid.Row="2" Name="Authors" ItemsSource="{Binding Path= ListOfAuthors}" 
+                      Height="50" VerticalAlignment="Center"
                       SelectedItem="{Binding Path=SAuthor}" >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -25,15 +40,13 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-            </StackPanel>
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding PriceContent}"></Label>
-                <TextBox Text="{Binding Price}" Width="400"  Height="50" FontSize="20"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
-                <Label FontSize="20" Content="{Binding LibraryContent}"></Label>
-                <ComboBox Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" 
-                      Width="400" Height="50" HorizontalAlignment="Left"
+
+                <Label Grid.Row="3" FontSize="20" Content="{Binding PriceContent}" VerticalAlignment="Top"></Label>
+                <TextBox Grid.Row="3" Text="{Binding Price}" Height="50" FontSize="20" VerticalAlignment="Center"></TextBox>
+
+                <Label Grid.Row="4" FontSize="20" Content="{Binding LibraryContent}"></Label>
+                <ComboBox Grid.Row="4" Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" 
+                      Height="50"
                       SelectedItem="{Binding Path=SLibrary}" >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -43,11 +56,11 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-            </StackPanel>
-            <TextBlock Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-            <Button Width="400" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
-        </StackPanel>
-        
+
+                <TextBlock Grid.Row="5" Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
+                <Button Grid.Row="5" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+            </Grid>
+        </Grid>
         <ContentControl Content="{Binding CurentView}"/>
     </Grid>
 </UserControl>

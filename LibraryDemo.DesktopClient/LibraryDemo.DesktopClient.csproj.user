@@ -13,7 +13,10 @@
     <Compile Update="Views\AddBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\AuthorView.xaml.cs">
+    <Compile Update="Views\AddLibraryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SecondMenuView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ShowAuthorsView.xaml.cs">
@@ -28,7 +31,7 @@
     <Compile Update="Views\DeleteBookView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LibraryView.xaml.cs">
+    <Compile Update="Views\ShowLibrariesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SearchView.xaml.cs">
@@ -51,7 +54,10 @@
     <Page Update="Views\AddBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AuthorView.xaml">
+    <Page Update="Views\AddLibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SecondMenuView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ShowAuthorsView.xaml">
@@ -66,7 +72,7 @@
     <Page Update="Views\DeleteBookView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LibraryView.xaml">
+    <Page Update="Views\ShowLibrariesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

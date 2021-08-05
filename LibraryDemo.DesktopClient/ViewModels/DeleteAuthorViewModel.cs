@@ -8,14 +8,11 @@ using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class DeleteAuthorViewModel : BaseNotifyPropertyChangedViewModel
+    class DeleteAuthorViewModel : BaseDeleteViewModel
     {
         #region Declaration
         private IEnumerable<Author> authors;
-        private ActionCommand deleteCommand;
         private Author _sAuthor;
-        private UserControl currentView;
-        private string errMasage;
         #endregion
 
         #region Constructor
@@ -26,19 +23,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #endregion
 
         #region Proparties
-        public ActionCommand DeleteCommand
-        {
-            get
-            {
-                if (deleteCommand == null)
-                {
-                    deleteCommand = new ActionCommand(Delete, CanExecuteShow);
-                }
-                return deleteCommand;
-            }
-        }
-
-        public IEnumerable<Author> ListOfAuthors
+        public IEnumerable<Author> ListOfT
         {
             get
             {
@@ -46,33 +31,12 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public Author SAuthor
+        public Author Selected
         {
             get { return _sAuthor; }
             set
             {
                 _sAuthor = value;
-            }
-        }
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string DeleteButtonContent
-        {
-            get
-            {
-                return content.DeleteButton();
             }
         }
 
@@ -83,37 +47,26 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return content.SelectAuthorText();
             }
         }
-
-        public string ErrMasage
-        {
-            get
-            {
-                return errMasage;
-            }
-            set
-            {
-                errMasage = value;
-                OnPropertyChanged();
-            }
-        }
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
-
-        public void Delete(Object o)
+        public override void Delete(Object o)
         {
             if (_sAuthor != null)
             {
-                if (context.DeleteAuthor(_sAuthor.Id))
+                if (ErrMasage != null && !ErrMasage.Equals(content.ErrSelectAuthor()))
                 {
-                    SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccesfullyDeletedBook());
-                    SuccessfulOperationView view = new SuccessfulOperationView();
-                    view.DataContext = viewModel;
-                    CurentView = view;
+                    if (context.DeleteAuthor(_sAuthor.Id))
+                    {
+                        SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccesfullyDeletedAuthor());
+                        SuccessfulOperationView view = new SuccessfulOperationView();
+                        view.DataContext = viewModel;
+                        CurentView = view;
+                    }
+                }
+                else
+                {
+                    ErrMasage = content.WarningAuthorDelete();
                 }
             }
             else

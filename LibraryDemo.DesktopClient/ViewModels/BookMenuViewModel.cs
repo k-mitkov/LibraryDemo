@@ -5,31 +5,14 @@ using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class BookViewModel : BaseNotifyPropertyChangedViewModel
+    public class BookMenuViewModel : BaseMenuViewModel
     {
         #region Declaration
-        private ActionCommand allBooksCommand;
         private ActionCommand booksByAuthorCommand;
         private ActionCommand booksByLibraryCommand;
-        private ActionCommand addBookCommand;
-        private ActionCommand searchBookCommand;
-        private ActionCommand deleteBookCommand;
-        private UserControl currentView;
         #endregion
 
         #region Proparties
-        public ActionCommand AllBooksCommand
-        {
-            get
-            {
-                if (allBooksCommand == null)
-                {
-                    allBooksCommand = new ActionCommand(AllBooks, CanExecuteShow);
-                }
-                return allBooksCommand;
-            }
-        }
-
         public ActionCommand BooksByAuthorCommand
         {
             get
@@ -53,44 +36,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 return booksByLibraryCommand;
             }
         }
-
-        public ActionCommand AddBookCommand
-        {
-            get
-            {
-                if (addBookCommand == null)
-                {
-                    addBookCommand = new ActionCommand(AddBook, CanExecuteShow);
-                }
-                return addBookCommand;
-            }
-        }
-
-        public ActionCommand SearchBookCommand
-        {
-            get
-            {
-                if (searchBookCommand == null)
-                {
-                    searchBookCommand = new ActionCommand(SearchBook, CanExecuteShow);
-                }
-                return searchBookCommand;
-            }
-        }
-
-        public ActionCommand DeleteBookCommand
-        {
-            get
-            {
-                if (deleteBookCommand == null)
-                {
-                    deleteBookCommand = new ActionCommand(DeleteBook, CanExecuteShow);
-                }
-                return deleteBookCommand;
-            }
-        }
-
-        public string AllBooksButtonContent
+        public string ShowAllButtonContent
         {
             get
             {
@@ -114,7 +60,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public string SearchBookButtonContent
+        public string SearchButtonContent
         {
             get
             {
@@ -122,7 +68,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public string AddBookButtonContent
+        public string AddButtonContent
         {
             get
             {
@@ -130,35 +76,17 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public string DeleteBookButtonContent
+        public string DeleteButtonContent
         {
             get
             {
                 return content.DeleteBookButton();
             }
         }
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
-
-        public void AllBooks(Object o)
+        public override void ShowAll(Object o)
         {
             ShowBooksViewModel viewModel = new ShowBooksViewModel();
             ShowBooksView view = new ShowBooksView();
@@ -184,7 +112,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             CurentView = view;
         }
 
-        public void AddBook(Object o)
+        public override void Add(Object o)
         {
             AddBookViewModel viewModel = new AddBookViewModel();
             AddBookView view = new AddBookView();
@@ -192,7 +120,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             CurentView = view;
         }
 
-        public void SearchBook(Object o)
+        public override void Search(Object o)
         {
             SearchBookViewModel viewModel = new SearchBookViewModel();
             SearchView view = new SearchView();
@@ -200,7 +128,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             CurentView = view;
         }
 
-        public void DeleteBook(Object o)
+        public override void Delete(Object o)
         {
             SearchBookToDeleteViewModel viewModel = new SearchBookToDeleteViewModel();
             SearchView view = new SearchView();

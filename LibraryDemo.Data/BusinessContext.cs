@@ -47,10 +47,12 @@ namespace LibraryDemo.Data
         public bool DeleteAuthor(int id)
         {
             context.Authors.Remove(context.Authors.Find(id));
+
             foreach(Book book in this.GetBooksByAuthorId(id))
             {
                 context.Books.Remove(book);
             }
+
             context.SaveChanges();
 
             return true;
@@ -73,6 +75,25 @@ namespace LibraryDemo.Data
         public IQueryable<Library> GetLibraries()
         {
             return context.Libraries.AsQueryable();
+        }
+
+        public IQueryable<Library> SearchForLibraries(string keyWord)
+        {
+            return context.Libraries.Include("Books").Where(a => a.Name.Contains(keyWord)).AsQueryable();
+        }
+
+        public bool DeleteLibrary(int id)
+        {
+            context.Libraries.Remove(context.Libraries.Find(id));
+
+            foreach (Book book in this.GetBooksByLibraryId(id))
+            {
+                context.Books.Remove(book);
+            }
+
+            context.SaveChanges();
+
+            return true;
         }
 
         public Book AddNewBook(Book book)
