@@ -12,11 +12,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="20" Grid.Row="0" Orientation="Horizontal">
-            <TextBlock x:Name="txt" Text="{Binding SelectContent}" FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox ItemsSource="{Binding Path= ListOfT}" 
-                      Width="500" Height="30" HorizontalAlignment="Left"
-                      SelectedItem="{Binding Path=Selected}" >
+        <Grid Grid.Row="0" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Text="{Binding SelectContent}" FontSize="30"/>
+
+            <ComboBox Grid.Column="2" ItemsSource="{Binding Path= ListOfT}" SelectedItem="{Binding Path=Selected}" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -25,10 +33,13 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Content="{Binding SearchButtonContent}" Command="{Binding Path=ShowCommand}" Background="Moccasin"
-                    FontSize ="20" VerticalAlignment="Center" Width="250" Height="30" HorizontalAlignment="Left"/>
-            <TextBlock Text="{Binding ErrMasage}" Margin="10, 5, 0, 0" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-        </StackPanel>
+
+            <Button Grid.Column="3" Content="{Binding SearchButtonContent}" Command="{Binding Path=ShowCommand}" Background="Moccasin" FontSize ="20"/>
+
+            <TextBlock Grid.Column="4" Text="{Binding ErrMasage}" FontSize="20" Margin="5,10,0,0"/>
+        </Grid>
+        
         <ContentControl Content="{Binding CurentView}" Grid.Row="1"/>
+        
     </Grid>
 </UserControl>

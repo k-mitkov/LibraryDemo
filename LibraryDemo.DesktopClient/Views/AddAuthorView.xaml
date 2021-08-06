@@ -14,32 +14,54 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="2" FontSize="20" Content="{Binding NameContent}" VerticalAlignment="Top"></Label>
-            <TextBox Grid.Row="2" Text="{Binding Name}" Width="auto" VerticalAlignment="Center" Height="50" FontSize="20"></TextBox>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" FontSize="20" Content="{Binding NameContent}"></Label>
+                <TextBox Grid.Row="1" Text="{Binding Name}" Width="auto" FontSize="20"></TextBox>
+            </Grid>
 
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" FontSize="20" Content="{Binding GenderContent}"></Label>
+                <ComboBox Grid.Row="1" Name="Authors" ItemsSource="{Binding Path= ListOfGenders}" SelectedItem="{Binding Path=SGender}" />
+            </Grid>
 
-            <Label Grid.Row="3" FontSize="20" VerticalAlignment="Top" Content="{Binding GenderContent}"></Label>
-            <ComboBox Grid.Row="3" Name="Authors" VerticalAlignment="Center" ItemsSource="{Binding Path= ListOfGenders}" 
-                      Height="50" SelectedItem="{Binding Path=SGender}" >
-            </ComboBox>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" FontSize="20" Content="{Binding MailContent}"></Label>
+                <TextBox Grid.Row="1" Text="{Binding Mail}" Width="auto" FontSize="20"></TextBox>
+            </Grid>
 
-            <Label Grid.Row="4" FontSize="20" VerticalAlignment="Top" Content="{Binding MailContent}"></Label>
-            <TextBox Grid.Row="4" Text="{Binding Mail}" VerticalAlignment="Center" Width="auto" Height="50" FontSize="20"></TextBox>
-
-            <TextBlock Grid.Row="5" Text="{Binding ErrMasage}" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-            <Button Grid.Row="5" Height="50" Content="{Binding AddButtonContent}" VerticalAlignment="Center" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20"/>
+                <Button Grid.Row="1" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+            </Grid>
         </Grid>
-
-        <ContentControl Content="{Binding CurentView}"/>
+        <ContentControl Grid.ColumnSpan="3" Content="{Binding CurentView}"/>
     </Grid>
 </UserControl>

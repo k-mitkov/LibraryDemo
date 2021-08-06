@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LibraryDemo.DesktopClient.Views" xmlns:viewmodels="clr-namespace:LibraryDemo.DesktopClient.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:BookViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="DarkSalmon">
@@ -24,7 +23,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Image Source="\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
                 
                 <Button x:Name ="AllBooks" Grid.Row="1" Content = "{Binding ShowAllButtonContent}"
                    Command="{Binding Path=ShowAllCommand}"
@@ -40,7 +39,7 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="\images\Author.jpg" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\Author.jpg" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
             <Button x:Name ="BooksByAuthor" Grid.Row="1" Content = "{Binding BooksByAuthorButtonContent}"
                         Command="{Binding Path=BooksByAuthorCommand}"
@@ -57,7 +56,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\Library.png"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\Library.png"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
             <Button x:Name ="BooksByLibrary" Grid.Row="1" Content = "{Binding BooksByLibraryButtonContent}"
                          Command="{Binding Path=BooksByLibraryCommand}"
@@ -75,7 +74,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\addBook.jpg"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\addBook.jpg"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
             <Button x:Name ="AddBook" Grid.Row="1" Content = "{Binding AddButtonContent}"
                         Command="{Binding Path=AddCommand}"
@@ -92,7 +91,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
+            <Image Source="\Resources\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
             
             <Button x:Name ="SearchBook" Grid.Row="1" Content = "{Binding SearchButtonContent}"
                         Command="{Binding Path=SearchCommand}"  
@@ -108,8 +107,8 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
-            <Image Source="\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+
+            <Image Source="\Resources\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
             
             <Button x:Name ="DeleteBook" Grid.Row="1" Content = "{Binding DeleteButtonContent}"
                         Command="{Binding Path=DeleteCommand}"

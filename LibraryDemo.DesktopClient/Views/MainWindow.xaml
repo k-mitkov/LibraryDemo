@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryDemo.DesktopClient" xmlns:viewmodels="clr-namespace:LibraryDemo.DesktopClient.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Icon="\images\bookIcon.png"
+        Icon="\Resources\images\bookIcon.png"
         WindowState="Maximized"
         MinHeight="768"
         MinWidth="1366"
@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Source="\images\books.jpg" Grid.Row="1"
+        <Image Source="\Resources\images\books.jpg" Grid.Row="1"
                Stretch="Fill"/>
 
         <ContentControl Content="{Binding CurentView}" Grid.Row="1"/>
@@ -50,7 +50,7 @@
                    FontSize="50"
                    Cursor="Hand"/>
             <Button Grid.Column="3" Background="Moccasin" Command="{Binding Path=SettingsCommand}">
-                <Image Source="\images\settings.png"/>
+                <Image Source="\Resources\images\settings.png"/>
             </Button>
         </Grid>
     </Grid>

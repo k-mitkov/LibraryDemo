@@ -23,7 +23,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\allBooks.png" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
             <Button Grid.Row="1" Content = "{Binding ShowAllButtonContent}"
                    Command="{Binding Path=ShowAllCommand}"
@@ -39,7 +39,7 @@
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="\images\addBook.jpg" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\addBook.jpg" Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
             <Button Grid.Row="1" Content = "{Binding AddButtonContent}"
                         Command="{Binding Path=AddCommand}"
@@ -56,7 +56,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
+            <Image Source="\Resources\images\delete.jfif"  Grid.Row="0" Stretch="Fill" VerticalAlignment="Top" />
 
             <Button Grid.Row="1" Content = "{Binding DeleteButtonContent}"
                         Command="{Binding Path=DeleteCommand}"
@@ -73,7 +73,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
+            <Image Source="\Resources\images\search.jpg"  Grid.Row="0" Stretch="Fill"  VerticalAlignment="Top" />
 
             <Button Grid.Row="1" Content = "{Binding SearchButtonContent}"
                         Command="{Binding Path=SearchCommand}"  

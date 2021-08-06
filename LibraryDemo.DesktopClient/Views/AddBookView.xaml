@@ -25,42 +25,73 @@
                     <RowDefinition Height="1.5*"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="1" FontSize="20" Content="{Binding TitleContent}" VerticalAlignment="Top"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Title}" Height="50" FontSize="20" VerticalAlignment="Center"></TextBox>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="20" Content="{Binding TitleContent}" ></Label>
+                    <TextBox Grid.Row="1" Text="{Binding Title}" FontSize="20"></TextBox>
+                </Grid>
 
-                <Label Grid.Row="2" FontSize="20" Content="{Binding AuthorContent}" VerticalAlignment="Top"></Label>
-                <ComboBox Grid.Row="2" Name="Authors" ItemsSource="{Binding Path= ListOfAuthors}" 
-                      Height="50" VerticalAlignment="Center"
-                      SelectedItem="{Binding Path=SAuthor}" >
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" FontSize="20"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="20" Content="{Binding AuthorContent}"></Label>
+                    <ComboBox Grid.Row="1" ItemsSource="{Binding Path= ListOfAuthors}" SelectedItem="{Binding Path=SAuthor}" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontSize="20"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </Grid>
 
-                <Label Grid.Row="3" FontSize="20" Content="{Binding PriceContent}" VerticalAlignment="Top"></Label>
-                <TextBox Grid.Row="3" Text="{Binding Price}" Height="50" FontSize="20" VerticalAlignment="Center"></TextBox>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="20" Content="{Binding PriceContent}"></Label>
+                    <TextBox Grid.Row="1" Text="{Binding Price}" FontSize="20"></TextBox>
+                </Grid>
 
-                <Label Grid.Row="4" FontSize="20" Content="{Binding LibraryContent}"></Label>
-                <ComboBox Grid.Row="4" Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" 
-                      Height="50"
-                      SelectedItem="{Binding Path=SLibrary}" >
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" FontSize="20"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" FontSize="20" Content="{Binding LibraryContent}"></Label>
+                    <ComboBox Grid.Row="1" Name="Libraries" ItemsSource="{Binding Path= ListOfLibraries}" SelectedItem="{Binding Path=SLibrary}" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontSize="20"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </Grid>
 
-                <TextBlock Grid.Row="5" Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-                <Button Grid.Row="5" Height="50" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding ErrMasage}" Height="auto" Width="auto" FontSize="20"/>
+                    <Button Grid.Row="1" Content="{Binding AddButtonContent}" FontSize="20" Command="{Binding Path=AddCommand}" Background="Moccasin"/>
+                </Grid>
             </Grid>
         </Grid>
-        <ContentControl Content="{Binding CurentView}"/>
+        <ContentControl Grid.ColumnSpan="3"  Content="{Binding CurentView}"/>
     </Grid>
 </UserControl>

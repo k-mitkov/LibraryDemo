@@ -7,14 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="DarkSalmon">
-        <StackPanel Margin="100"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="txt" Text="{Binding SelectLanguage}" FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox ItemsSource="{Binding Path= ListOfLanguages}" 
-                      Width="500" Height="30" HorizontalAlignment="Left"
-                      SelectedItem="{Binding Path=Slanguage}" >
-            </ComboBox>
-            <Button Content="{Binding SaveButtonContent}" Command="{Binding Path=SaveCommand}" Background="Moccasin"
-                    FontSize ="20" VerticalAlignment="Center" Width="250" Height="30" HorizontalAlignment="Left"/>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Binding SelectLanguage}" FontSize="30" Grid.Row="1" Grid.Column="1"/>
+
+        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Path= ListOfLanguages}" SelectedItem="{Binding Path=Slanguage}" FontSize="30"/>
+
+        <Button Grid.Row="1" Grid.Column="3" Content="{Binding SaveButtonContent}" Command="{Binding Path=SaveCommand}" Background="Moccasin" FontSize ="30"/>
+        
     </Grid>
 </UserControl>

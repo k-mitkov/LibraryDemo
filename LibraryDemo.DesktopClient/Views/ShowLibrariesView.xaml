@@ -10,10 +10,20 @@
         <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfLibraries}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{Binding NameHeader}" Width="420" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="{Binding AddressHeader}" Width="920" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="{Binding NameHeader}" DisplayMemberBinding="{Binding Name}" Width="{Binding ElementName=FirstCol, Path=ActualWidth}"/>
+                    <GridViewColumn Header="{Binding AddressHeader}" DisplayMemberBinding="{Binding Address}" Width="{Binding ElementName=SecondCol, Path=ActualWidth}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Grid Visibility="Hidden" Margin="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" x:Name="FirstCol"/>
+            <Grid Grid.Column="1" x:Name="SecondCol"/>
+        </Grid>
     </Grid>
 </UserControl>

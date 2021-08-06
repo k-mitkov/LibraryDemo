@@ -7,48 +7,48 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\addBook.jpg" />
-    <None Remove="images\allBooks.png" />
-    <None Remove="images\Author.jpg" />
-    <None Remove="images\bookIcon.png" />
-    <None Remove="images\books.jpg" />
-    <None Remove="images\delete.jfif" />
-    <None Remove="images\delete.jpg" />
-    <None Remove="images\Library.png" />
-    <None Remove="images\search.jpg" />
-    <None Remove="images\setings.png" />
-    <None Remove="images\settings.png" />
+    <None Remove="Resources\images\addBook.jpg" />
+    <None Remove="Resources\images\allBooks.png" />
+    <None Remove="Resources\images\Author.jpg" />
+    <None Remove="Resources\images\bookIcon.png" />
+    <None Remove="Resources\images\books.jpg" />
+    <None Remove="Resources\images\delete.jfif" />
+    <None Remove="Resources\images\delete.jpg" />
+    <None Remove="Resources\images\Library.png" />
+    <None Remove="Resources\images\search.jpg" />
+    <None Remove="Resources\images\setings.png" />
+    <None Remove="Resources\images\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="images\addBook.jpg">
+    <Content Include="Resources\images\addBook.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\allBooks.png">
+    <Content Include="Resources\images\allBooks.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\Author.jpg">
+    <Content Include="Resources\images\Author.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\bookIcon.png">
+    <Content Include="Resources\images\bookIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\books.jpg">
+    <Content Include="Resources\images\books.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\delete.jfif">
+    <Content Include="Resources\images\delete.jfif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\delete.jpg">
+    <Content Include="Resources\images\delete.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\Library.png">
+    <Content Include="Resources\images\Library.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\search.jpg">
+    <Content Include="Resources\images\search.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\settings.png">
+    <Content Include="Resources\images\settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

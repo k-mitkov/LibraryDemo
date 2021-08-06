@@ -10,17 +10,29 @@
         <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfAuthors}">
 			<ListView.View>
 				<GridView>
-					<GridViewColumn Header="{Binding NameHeader}" Width="420" DisplayMemberBinding="{Binding Name}" />
-					<GridViewColumn Header="{Binding GenderHeader}" Width="200" DisplayMemberBinding="{Binding Gender}" />
-					<GridViewColumn Header="{Binding MailHeader}" Width="720">
+					<GridViewColumn Header="{Binding NameHeader}" DisplayMemberBinding="{Binding Name}" Width="{Binding ElementName=FirstCol, Path=ActualWidth}"/>
+                    <GridViewColumn Header="{Binding GenderHeader}" DisplayMemberBinding="{Binding Gender}" Width="{Binding ElementName=SecondCol, Path=ActualWidth}"/>
+                    <GridViewColumn Header="{Binding MailHeader}" Width="{Binding ElementName=ThirdCol, Path=ActualWidth}">
 						<GridViewColumn.CellTemplate>
 							<DataTemplate>
-								<TextBlock Text="{Binding Email}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+								<TextBlock Text="{Binding Email}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand"/>
 							</DataTemplate>
 						</GridViewColumn.CellTemplate>
 					</GridViewColumn>
 				</GridView>
 			</ListView.View>
 		</ListView>
+
+        <Grid Visibility="Hidden" Margin="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" x:Name="FirstCol"/>
+            <Grid Grid.Column="1" x:Name="SecondCol"/>
+            <Grid Grid.Column="2" x:Name="ThirdCol"/>
+        </Grid>
     </Grid>
 </UserControl>

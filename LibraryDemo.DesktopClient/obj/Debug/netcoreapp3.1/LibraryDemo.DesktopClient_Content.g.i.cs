@@ -8,15 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/addbook.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/allbooks.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/author.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bookicon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/books.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/delete.jfif")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/delete.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/library.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/search.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/addbook.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/allbooks.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/author.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/bookicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/books.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/delete.jfif")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/delete.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/library.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/search.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/settings.png")]
 
 

@@ -7,24 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="DarkSalmon">
-        <StackPanel Margin="20,50,0,0" Orientation="Vertical">
-            <TextBlock Text="{Binding SelectToDeleteContent}" FontSize="30" HorizontalAlignment="Center"></TextBlock>
-            <ComboBox ItemsSource="{Binding Path= ListOfT}"
-                      VerticalAlignment="Top" Margin="0,10,0,0"
-                      Width="550" Height="30"
-                      SelectedItem="{Binding Path=Selected}" >
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-            <Button Content="{Binding DeleteButtonContent}" Background="Red" Command="{Binding Path=DeleteCommand}" Margin="0,10,0,0"  
-                    FontSize ="20" VerticalAlignment="Top" Width="250" Height="30" />
-            <TextBlock Text="{Binding ErrMasage}" Margin="10, 5, 0, 0" Height="auto" Width="auto" FontSize="20" HorizontalAlignment="Center"/>
-        </StackPanel>
-        <ContentControl Content="{Binding CurentView}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectToDeleteContent}" FontSize="30" ></TextBlock>
+
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Path= ListOfT}" SelectedItem="{Binding Path=Selected}" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" FontSize="30"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button Grid.Row="4" Grid.Column="1" Content="{Binding DeleteButtonContent}" Background="Red" Command="{Binding Path=DeleteCommand}" FontSize ="20"/>
+
+        <TextBlock Grid.Row="5" Grid.ColumnSpan="3" Text="{Binding ErrMasage}" FontSize="20" Width="auto" HorizontalAlignment="Center"/>
+
+        <ContentControl Grid.RowSpan="7" Grid.ColumnSpan="3" Content="{Binding CurentView}"/>
     </Grid>
 </UserControl>
