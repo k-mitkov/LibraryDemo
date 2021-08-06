@@ -36,7 +36,7 @@ namespace LibraryDemo.Data
 
         public IQueryable<Author> SearchForAutors(string keyWord)
         {
-            return context.Authors.Include("Books").Where(a => a.Name.Contains(keyWord)).AsQueryable();
+            return context.Authors.Where(a => a.Name.Contains(keyWord)).AsQueryable();
         }
 
         public IQueryable<Author> GetAuthors()
@@ -79,7 +79,7 @@ namespace LibraryDemo.Data
 
         public IQueryable<Library> SearchForLibraries(string keyWord)
         {
-            return context.Libraries.Include("Books").Where(a => a.Name.Contains(keyWord)).AsQueryable();
+            return context.Libraries.Where(a => a.Name.Contains(keyWord)).AsQueryable();
         }
 
         public bool DeleteLibrary(int id)

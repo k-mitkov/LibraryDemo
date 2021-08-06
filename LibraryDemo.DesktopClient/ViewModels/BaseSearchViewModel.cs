@@ -41,7 +41,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SearchButton();
+                return content.Search();
             }
         }
 

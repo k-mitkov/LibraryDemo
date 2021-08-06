@@ -1,29 +1,26 @@
-﻿using LibraryDemo.Data.Models;
-using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
     class DeleteAuthorViewModel : BaseDeleteViewModel
     {
         #region Declaration
-        private IEnumerable<Author> authors;
-        private Author _sAuthor;
+        private IEnumerable<BAuthor> authors;
+        private BAuthor _sAuthor;
         #endregion
 
         #region Constructor
-        public DeleteAuthorViewModel(List<Author> authors)
+        public DeleteAuthorViewModel(List<BAuthor> authors)
         {
             this.authors = authors;
         }
         #endregion
 
         #region Proparties
-        public IEnumerable<Author> ListOfT
+        public IEnumerable<BAuthor> ListOfT
         {
             get
             {
@@ -31,7 +28,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public Author Selected
+        public BAuthor Selected
         {
             get { return _sAuthor; }
             set
@@ -44,7 +41,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SelectAuthorText();
+                return content.SelectAuthor();
             }
         }
         #endregion
@@ -56,7 +53,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             {
                 if (ErrMasage != null && !ErrMasage.Equals(content.ErrSelectAuthor()))
                 {
-                    if (context.DeleteAuthor(_sAuthor.Id))
+                    if (authorService.Delete(_sAuthor.Id))
                     {
                         SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccesfullyDeletedAuthor());
                         SuccessfulOperationView view = new SuccessfulOperationView();

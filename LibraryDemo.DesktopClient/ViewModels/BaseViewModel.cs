@@ -1,5 +1,7 @@
 ﻿using LibraryDemo.Data;
 using LibraryDemo.DesktopClient.Resources.AppTextContent;
+using LibraryDemo.DesktopClient.Services;
+using LibraryDemo.DesktopClient.Services.Impl;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
@@ -7,6 +9,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
     {
         #region Declaration
         protected IDataService context;
+        protected IAuthorService authorService;
+        protected IBookService bookService;
+        protected ILibraryService libraryService;
         protected IContent content;
         #endregion
 
@@ -15,6 +20,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             context = new BusinessContext();
             content = new AppContent();
+            authorService = new AuthorService();
+            libraryService = new LibraryService();
+            bookService = new BookService();
         }
         #endregion
     }

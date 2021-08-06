@@ -1,34 +1,31 @@
-﻿using LibraryDemo.Data.Models;
-using System;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
     class ShowBooksViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaration
-        private IEnumerable<Book> books;
+        private IEnumerable<BBook> books;
         #endregion
 
         #region Constuctor
         public ShowBooksViewModel() { }
 
-        public ShowBooksViewModel(IEnumerable<Book> books)
+        public ShowBooksViewModel(IEnumerable<BBook> books)
         {
             this.books = books;
         }
         #endregion
 
         #region Proparties
-        public IEnumerable<Book> ListOfBooks
+        public IEnumerable<BBook> ListOfBooks
         {
             get
             {
                 if (books == null)
                 {
-                    books = context.GetBooks().ToList();
+                    books = bookService.GetBooks();
                 }
                 return books;
             }
@@ -38,28 +35,28 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.TitleHeader();
+                return content.Title();
             }
         }
         public string AuthorHeader
         {
             get
             {
-                return content.AuthorHeader();
+                return content.Author();
             }
         }
         public string PriceHeader
         {
             get
             {
-                return content.PriceHeader();
+                return content.Price();
             }
         }
         public string LibraryHeader
         {
             get
             {
-                return content.LibraryHeader();
+                return content.Library();
             }
         }
         #endregion

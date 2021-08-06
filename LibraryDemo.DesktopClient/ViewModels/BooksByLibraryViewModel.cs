@@ -1,9 +1,8 @@
-﻿using LibraryDemo.Data.Models;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -11,22 +10,22 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public class BooksByLibraryViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaraion
-        private Library selected;
+        private BLibrary selected;
         private ActionCommand showCommand;
         private UserControl currentView;
         private string errMasage;
         #endregion
 
         #region Proparties
-        public IEnumerable<Library> ListOfT
+        public IEnumerable<BLibrary> ListOfT
         {
             get
             {
-                return context.GetLibraries().ToList();
+                return libraryService.GetLibraries();
             }
         }
 
-        public Library Selected
+        public BLibrary Selected
         {
             get { return selected; }
             set
@@ -51,7 +50,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SelectLibrayText();
+                return content.SelectLibray();
             }
         }
 
@@ -59,7 +58,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SearchButton();
+                return content.Search();
             }
         }
 
@@ -101,7 +100,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             if (selected != null)
             {
                 ErrMasage = "";
-                ShowBooksViewModel viewModel = new ShowBooksViewModel(context.GetBooksByLibraryId(selected.Id).ToList());
+                ShowBooksViewModel viewModel = new ShowBooksViewModel(bookService.GetBooksByLibraryId(selected.Id));
                 ShowBooksView view = new ShowBooksView();
                 view.DataContext = viewModel;
                 CurentView = view;

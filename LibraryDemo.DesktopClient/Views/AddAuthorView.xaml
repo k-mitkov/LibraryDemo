@@ -39,7 +39,7 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="20" Content="{Binding GenderContent}"></Label>
-                <ComboBox Grid.Row="1" Name="Authors" ItemsSource="{Binding Path= ListOfGenders}" SelectedItem="{Binding Path=SGender}" />
+                <ComboBox Grid.Row="1" Name="Authors" ItemsSource="{Binding Path= ListOfGenders}" SelectedItem="{Binding Path=SGender}" FontSize="20"/>
             </Grid>
 
             <Grid Grid.Row="3">

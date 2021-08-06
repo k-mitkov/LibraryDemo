@@ -22,7 +22,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AddBookButton()
+        public string AddBook()
         {
             switch (language)
             {
@@ -44,7 +44,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AddButton()
+        public string Add()
         {
             switch (language)
             {
@@ -55,7 +55,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AddressHeader()
+        public string Address()
         {
             switch (language)
             {
@@ -77,7 +77,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AllBooksButton()
+        public string AllBooks()
         {
             switch (language)
             {
@@ -98,7 +98,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AuthorHeader()
+        public string Author()
         {
             switch (language)
             {
@@ -109,7 +109,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string AuthorsButton()
+        public string Authors()
         {
             switch (language)
             {
@@ -120,7 +120,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string BooksButton()
+        public string Books()
         {
             switch (language)
             {
@@ -131,7 +131,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string ByAuthorsButton()
+        public string ByAuthors()
         {
             switch (language)
             {
@@ -142,7 +142,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string ByLibrariesButton()
+        public string ByLibraries()
         {
             switch (language)
             {
@@ -163,7 +163,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string DeleteBookButton()
+        public string DeleteBook()
         {
             switch (language)
             {
@@ -185,7 +185,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string DeleteButton()
+        public string Delete()
         {
             switch (language)
             {
@@ -326,7 +326,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string GenderHeader()
+        public string Gender()
         {
             switch (language)
             {
@@ -337,7 +337,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string LibrariesButton()
+        public string Libraries()
         {
             switch (language)
             {
@@ -348,7 +348,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string LibraryHeader()
+        public string Library()
         {
             switch (language)
             {
@@ -359,7 +359,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string MailHeader()
+        public string Mail()
         {
             switch (language)
             {
@@ -381,7 +381,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string NameHeader()
+        public string Name()
         {
             switch (language)
             {
@@ -392,7 +392,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string PriceHeader()
+        public string Price()
         {
             switch (language)
             {
@@ -413,7 +413,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SearchBookButton()
+        public string SearchBook()
         {
             switch (language)
             {
@@ -435,7 +435,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SearchButton()
+        public string Search()
         {
             switch (language)
             {
@@ -446,7 +446,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SearchTitleText()
+        public string SearchTitle()
         {
             switch (language)
             {
@@ -468,7 +468,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SelectAuthorText()
+        public string SelectAuthor()
         {
             switch (language)
             {
@@ -479,7 +479,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SelectBookText()
+        public string SelectBook()
         {
             switch (language)
             {
@@ -490,7 +490,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SelectLibrayText()
+        public string SelectLibray()
         {
             switch (language)
             {
@@ -566,7 +566,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string TitleHeader()
+        public string Title()
         {
             switch (language)
             {
@@ -577,7 +577,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SaveButton()
+        public string Save()
         {
             switch (language)
             {
@@ -588,7 +588,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public string SelectLanguageText()
+        public string SelectLanguage()
         {
             switch (language)
             {
@@ -636,8 +636,8 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             switch (language)
             {
                 case Languages.Български:
-                    genders.Add("male");
-                    genders.Add("female");
+                    genders.Add("Мъж");
+                    genders.Add("Жена");
                     return genders;
                 default:
                     genders.Add("Male");

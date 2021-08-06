@@ -44,7 +44,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.DeleteButton();
+                return content.Delete();
             }
         }
 

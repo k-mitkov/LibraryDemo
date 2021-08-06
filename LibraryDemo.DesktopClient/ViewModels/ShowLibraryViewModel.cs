@@ -1,4 +1,4 @@
-﻿using LibraryDemo.Data.Models;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,26 +7,26 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public class ShowLibraryViewModel : BaseViewModel
     {
         #region Declaration
-        private IEnumerable<Library> listOfLibraries;
+        private IEnumerable<BLibrary> listOfLibraries;
         #endregion
 
         #region Constructor
         public ShowLibraryViewModel() { }
 
-        public ShowLibraryViewModel(IEnumerable<Library> listOfLibraries)
+        public ShowLibraryViewModel(IEnumerable<BLibrary> listOfLibraries)
         {
             this.listOfLibraries = listOfLibraries;
         }
         #endregion
 
         #region Proparties
-        public IEnumerable<Library> ListOfLibraries
+        public IEnumerable<BLibrary> ListOfLibraries
         {
             get
             {
                 if(listOfLibraries == null)
                 {
-                    listOfLibraries = context.GetLibraries().ToList();
+                    listOfLibraries = libraryService.GetLibraries().ToList();
                 }
                 return listOfLibraries;
             }
@@ -36,7 +36,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.NameHeader();
+                return content.Name();
             }
         }
 
@@ -44,7 +44,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.AddressHeader();
+                return content.Address();
             }
         }
         #endregion

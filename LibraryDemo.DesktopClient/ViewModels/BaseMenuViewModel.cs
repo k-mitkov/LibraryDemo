@@ -9,11 +9,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
     public abstract class BaseMenuViewModel : BaseNotifyPropertyChangedViewModel
     {
         #region Declaration
-        private ActionCommand showAllCommand;
-        private ActionCommand searchCommand;
-        private ActionCommand addCommand;
-        private ActionCommand deleteCommand;
-        private UserControl currentView;
+        protected ActionCommand showAllCommand;
+        protected ActionCommand searchCommand;
+        protected ActionCommand addCommand;
+        protected ActionCommand deleteCommand;
+        protected UserControl currentView;
         #endregion
 
         #region Proparties

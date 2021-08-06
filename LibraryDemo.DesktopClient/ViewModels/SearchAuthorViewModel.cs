@@ -1,11 +1,8 @@
-﻿using LibraryDemo.Data.Models;
-using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
@@ -24,7 +21,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #region Methods
         public override void Search(Object o)
         {
-            List<Author> authors = context.SearchForAutors(_keyWord).ToList();
+            List<BAuthor> authors = authorService.SearchForAutors(_keyWord).ToList();
             if (authors.Count == 0)
             {
                 ErrMasage = content.ErrAuthorNotFound();

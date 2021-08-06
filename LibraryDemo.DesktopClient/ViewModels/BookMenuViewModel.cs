@@ -40,7 +40,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.AllBooksButton();
+                return content.AllBooks();
             }
         }
 
@@ -48,7 +48,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.ByAuthorsButton();
+                return content.ByAuthors();
             }
         }
 
@@ -56,7 +56,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.ByLibrariesButton();
+                return content.ByLibraries();
             }
         }
 
@@ -64,7 +64,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SearchBookButton();
+                return content.SearchBook();
             }
         }
 
@@ -72,7 +72,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.AddBookButton();
+                return content.AddBook();
             }
         }
 
@@ -80,7 +80,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.DeleteBookButton();
+                return content.DeleteBook();
             }
         }
         #endregion

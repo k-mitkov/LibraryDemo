@@ -36,7 +36,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SelectLanguageText();
+                return content.SelectLanguage();
             }
         }
 
@@ -44,7 +44,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SaveButton();
+                return content.Save();
             }
         }
 

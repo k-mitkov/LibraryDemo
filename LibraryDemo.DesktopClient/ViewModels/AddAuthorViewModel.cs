@@ -1,22 +1,15 @@
-﻿using LibraryDemo.Data.Models;
-using LibraryDemo.DesktopClient.Command;
-using LibraryDemo.DesktopClient.Views;
+﻿using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    class AddAuthorViewModel : BaseNotifyPropertyChangedViewModel
+    class AddAuthorViewModel : BaseAddViewModel
     {
         #region Declaration
         private string _name;
         private string _gender;
         private string _mail;
-        private ActionCommand addCommand;
-        private UserControl currentView;
-        private string errMasage;
         #endregion
 
         #region Proparties
@@ -49,97 +42,47 @@ namespace LibraryDemo.DesktopClient.ViewModels
             set { _mail = value; }
         }
 
-        public ActionCommand AddCommand
-        {
-            get
-            {
-                if (addCommand == null)
-                {
-                    addCommand = new ActionCommand(Add, CanExecuteShow);
-                }
-                return addCommand;
-            }
-        }
-
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
-
         public string NameContent
         {
             get
             {
-                return content.NameHeader();
+                return content.Name();
             }
         }
         public string GenderContent
         {
             get
             {
-                return content.GenderHeader();
+                return content.Gender();
             }
         }
         public string MailContent
         {
             get
             {
-                return content.MailHeader();
+                return content.Mail();
             }
         }
         public string AddButtonContent
         {
             get
             {
-                return content.AddButton();
-            }
-        }
-
-        public string ErrMasage
-        {
-            get
-            {
-                return errMasage;
-            }
-            set
-            {
-                errMasage = value;
-                OnPropertyChanged();
+                return content.Add();
             }
         }
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
-
-        public void Add(Object o)
+        public override void Add(Object o)
         {
             if (ValidateInput())
             {
+                authorService.Add(_name, content.GenderTranslate(_gender), _mail);
 
-                var author = new Author()
-                {
-                    Name = _name,
-                    Gender = content.GenderTranslate(_gender),
-                    Email = _mail
-                };
-
-                context.AddNewAuthor(author);
                 SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedAuthor());
                 SuccessfulOperationView view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
+
                 CurentView = view;
             }
             else

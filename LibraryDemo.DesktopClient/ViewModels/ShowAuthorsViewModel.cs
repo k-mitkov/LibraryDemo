@@ -1,32 +1,31 @@
-﻿using LibraryDemo.Data.Models;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
     public class ShowAuthorsViewModel : BaseViewModel
     {
         #region Declaration
-        private IEnumerable<Author> listOfAuthors;
+        private IEnumerable<BAuthor> listOfAuthors;
         #endregion
 
         #region Constructor
         public ShowAuthorsViewModel() { }
 
-        public ShowAuthorsViewModel(IEnumerable<Author> listOfAuthors)
+        public ShowAuthorsViewModel(IEnumerable<BAuthor> listOfAuthors)
         {
             this.listOfAuthors = listOfAuthors;
         }
         #endregion
 
         #region Proparties
-        public IEnumerable<Author> ListOfAuthors
+        public IEnumerable<BAuthor> ListOfAuthors
         {
             get
             {
                 if (listOfAuthors == null)
                 {
-                    listOfAuthors = context.GetAuthors().ToList();
+                    listOfAuthors = authorService.GetAuthors();
                 }
                 return listOfAuthors;
             }
@@ -36,7 +35,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.NameHeader();
+                return content.Name();
             }
         }
 
@@ -44,7 +43,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.GenderHeader();
+                return content.Gender();
             }
         }
 
@@ -52,7 +51,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.MailHeader();
+                return content.Mail();
             }
         }
         #endregion

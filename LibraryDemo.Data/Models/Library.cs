@@ -19,7 +19,12 @@ namespace LibraryDemo.Data.Models
 
         public override string ToString()
         {
-            return String.Format("Library[ Name: {0} {1}]", Name, String.Join(" ", Books.Select((b) => b.ToString()).ToList()));
+            return Name;
         }
+
+        //public override string ToString()
+        //{
+        //    return String.Format("Library[ Name: {0} {1}]", Name, String.Join(" ", Books.Select((b) => b.ToString()).ToList()));
+        //}
     }
 }

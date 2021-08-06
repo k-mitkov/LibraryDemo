@@ -20,7 +20,12 @@ namespace LibraryDemo.Data.Models
 
         public override string ToString()
         {
-            return String.Format("Author[ Name: {0} Email: {1} Gender: {2} ]", Name, Email, Gender == 'm' ? "Male" : "Female");
+            return Name;
         }
+
+        //public override string ToString()
+        //{
+        //    return String.Format("Author[ Name: {0} Email: {1} Gender: {2} ]", Name, Email, Gender == 'm' ? "Male" : "Female");
+        //}
     }
 }

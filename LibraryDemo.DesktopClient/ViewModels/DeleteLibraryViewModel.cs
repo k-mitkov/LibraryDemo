@@ -1,27 +1,26 @@
-﻿using LibraryDemo.Data.Models;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
     class DeleteLibraryViewModel : BaseDeleteViewModel
     {
         #region Declaration
-        private IEnumerable<Library> libraries;
-        private Library _sLibrary;
+        private IEnumerable<BLibrary> libraries;
+        private BLibrary _sLibrary;
         #endregion
 
         #region Constructor
-        public DeleteLibraryViewModel(List<Library> libraries)
+        public DeleteLibraryViewModel(List<BLibrary> libraries)
         {
             this.libraries = libraries;
         }
         #endregion
 
         #region Proparties
-        public IEnumerable<Library> ListOfT
+        public IEnumerable<BLibrary> ListOfT
         {
             get
             {
@@ -29,7 +28,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public Library Selected
+        public BLibrary Selected
         {
             get { return _sLibrary; }
             set
@@ -42,7 +41,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.SelectLibrayText();
+                return content.SelectLibray();
             }
         }
         #endregion
@@ -54,7 +53,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             {
                 if (ErrMasage != null && !ErrMasage.Equals(content.ErrSelectLibrary()))
                 {
-                    if (context.DeleteLibrary(_sLibrary.Id))
+                    if (libraryService.Delete(_sLibrary.Id))
                     {
                         SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccesfullyDeletedLibrary());
                         SuccessfulOperationView view = new SuccessfulOperationView();

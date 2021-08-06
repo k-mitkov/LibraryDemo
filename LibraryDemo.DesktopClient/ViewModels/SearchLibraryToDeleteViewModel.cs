@@ -1,4 +1,4 @@
-﻿using LibraryDemo.Data.Models;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #region Methods
         public override void Search(Object o)
         {
-            List<Library> libraries = context.SearchForLibraries(_keyWord).ToList();
+            List<BLibrary> libraries = libraryService.SearchForLibraries(_keyWord).ToList();
             if (libraries.Count == 0)
             {
                 ErrMasage = content.ErrLibrariesNotFound();

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="DarkSalmon">
-        <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfLibraries}">
+        <ListView Margin="100" Name="lvAuthors" ItemsSource="{Binding ListOfLibraries}" ItemContainerStyle="{DynamicResource ListViewStyle}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{Binding NameHeader}" DisplayMemberBinding="{Binding Name}" Width="{Binding ElementName=FirstCol, Path=ActualWidth}"/>

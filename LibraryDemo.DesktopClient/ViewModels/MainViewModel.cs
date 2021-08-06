@@ -83,7 +83,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.AuthorsButton();
+                return content.Authors();
             }
         }
 
@@ -91,7 +91,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.BooksButton();
+                return content.Books();
             }
         }
 
@@ -99,7 +99,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             get
             {
-                return content.LibrariesButton();
+                return content.Libraries();
             }
         }
         public string WindowTitle

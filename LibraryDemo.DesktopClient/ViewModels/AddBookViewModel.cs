@@ -1,36 +1,30 @@
-﻿using LibraryDemo.Data.Models;
-using LibraryDemo.DesktopClient.Command;
+﻿using LibraryDemo.DesktopClient.BusinessModels;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
 {
-    public class AddBookViewModel : BaseNotifyPropertyChangedViewModel
+    public class AddBookViewModel : BaseAddViewModel
     {
         #region Declaration
-        private Author _sauthor;
-        private Library _slibrary;
+        private BAuthor _sauthor;
+        private BLibrary _slibrary;
         private string _title;
         private string _price;
-        private ActionCommand addCommand;
         private decimal price;
-        private UserControl currentView;
-        private string errMasage;
         #endregion
 
         #region Proparties
-        public IEnumerable<Author> ListOfAuthors
+        public IEnumerable<BAuthor> ListOfAuthors
         {
             get
             {
-                return context.GetAuthors().ToList();
+                return authorService.GetAuthors();
             }
         }
 
-        public Author SAuthor
+        public BAuthor SAuthor
         {
             get { return _sauthor; }
             set
@@ -39,15 +33,15 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public IEnumerable<Library> ListOfLibraries
+        public IEnumerable<BLibrary> ListOfLibraries
         {
             get
             {
-                return context.GetLibraries().ToList();
+                return libraryService.GetLibraries();
             }
         }
 
-        public Library SLibrary
+        public BLibrary SLibrary
         {
             get { return _slibrary; }
             set
@@ -68,100 +62,50 @@ namespace LibraryDemo.DesktopClient.ViewModels
             set { _price = value; }
         }
 
-        public ActionCommand AddCommand
-        {
-            get
-            {
-                if (addCommand == null)
-                {
-                    addCommand = new ActionCommand(Add, CanExecuteShow);
-                }
-                return addCommand;
-            }
-        }
-
-        public UserControl CurentView
-        {
-            get
-            {
-                return currentView;
-            }
-
-            set
-            {
-                currentView = value;
-                OnPropertyChanged();
-            }
-        }
-
         public string TitleContent
         {
             get
             {
-                return content.TitleHeader();
+                return content.Title();
             }
         }
         public string AuthorContent
         {
             get
             {
-                return content.AuthorHeader();
+                return content.Author();
             }
         }
         public string PriceContent
         {
             get
             {
-                return content.PriceHeader();
+                return content.Price();
             }
         }
         public string LibraryContent
         {
             get
             {
-                return content.LibraryHeader();
+                return content.Library();
             }
         }
         public string AddButtonContent
         {
             get
             {
-                return content.AddButton();
-            }
-        }
-
-        public string ErrMasage
-        {
-            get
-            {
-                return errMasage;
-            }
-            set
-            {
-                errMasage = value;
-                OnPropertyChanged();
+                return content.Add();
             }
         }
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(Object o)
-        {
-            return true;
-        }
-
-        public void Add(Object o)
+        public override void Add(Object o)
         {
             if (ValidateInput())
             {
-                var book = new Book
-                {
-                    Title = _title,
-                    Author = _sauthor,
-                    Price = price,
-                    Library = _slibrary
-                };
-                context.AddNewBook(book);
+                bookService.Add(_title, _sauthor, price, _slibrary);
+
                 SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedBook());
                 SuccessfulOperationView  view = new SuccessfulOperationView();
                 view.DataContext = viewModel;
