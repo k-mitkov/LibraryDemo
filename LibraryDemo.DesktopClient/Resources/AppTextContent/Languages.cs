@@ -1,5 +1,4 @@
-﻿
-namespace LibraryDemo.DesktopClient.Resources.AppTextContent
+﻿namespace LibraryDemo.DesktopClient.Resources.AppTextContent
 {
     public enum Languages
     {

@@ -28,7 +28,8 @@ namespace LibraryDemo.DesktopClient.Mappers.Impl
                 Id = book.Id,
                 Title = book.Title,
                 Author = authorMapper.Map(book.Author),
-                Library = libraryMapper.Map(book.Library)
+                Library = libraryMapper.Map(book.Library),
+                Price = book.Price
             };
         }
 
@@ -39,7 +40,8 @@ namespace LibraryDemo.DesktopClient.Mappers.Impl
                 Id = book.Id,
                 Title = book.Title,
                 Author = authorMapper.Map(book.Author),
-                Library = libraryMapper.Map(book.Library)
+                Library = libraryMapper.Map(book.Library),
+                Price = book.Price
             };
         }
 

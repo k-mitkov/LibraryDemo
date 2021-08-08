@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LibraryDemo.DesktopClient.Resources.AppTextContent
 {
@@ -646,12 +644,28 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             }
         }
 
-        public char GenderTranslate(string gender)
+        public char GenderTransformation(string gender)
         {
-            if (gender.Equals("Male") || gender.Equals("male")){
+            if (gender.Equals("Male") || gender.Equals("Мъж")){
                 return 'm';
             }
             return 'f';
+        }
+
+        public string GenderTransformation(char gender)
+        {
+            return gender == 'm'?"Male":"Female";
+        }
+
+        public string GenderTranslate(string gender)
+        {
+            switch (language)
+            {
+                case Languages.Български:
+                    return gender.Equals("Male") ? "Мъж" : "Жена";
+                default:
+                    return gender;
+            }
         }
 
         public static void SetLanguage(Languages slanguage)

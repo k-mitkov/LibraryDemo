@@ -1,5 +1,6 @@
 ﻿using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.BusinessModels;
+using LibraryDemo.DesktopClient.Resources.AppTextContent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,6 +8,17 @@ namespace LibraryDemo.DesktopClient.Mappers.Impl
 {
     class AuthorMapper : IAuthorMapper
     {
+        #region Declaration
+        private IContent content;
+        #endregion
+
+        #region Constructor
+        public AuthorMapper()
+        {
+            content = new AppContent();
+        }
+        #endregion
+
         #region Methods
         public BAuthor Map(Author author)
         {
@@ -14,7 +26,7 @@ namespace LibraryDemo.DesktopClient.Mappers.Impl
             {
                 Id = author.Id,
                 Name = author.Name,
-                Gender = author.Gender,
+                Gender = content.GenderTransformation(author.Gender),
                 Email = author.Email
             };
         }
@@ -25,7 +37,7 @@ namespace LibraryDemo.DesktopClient.Mappers.Impl
             {
                 Id = author.Id,
                 Name = author.Name,
-                Gender = author.Gender,
+                Gender = content.GenderTransformation(author.Gender),
                 Email = author.Email,
                 Books = new List<Book>()
             };

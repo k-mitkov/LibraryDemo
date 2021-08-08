@@ -1,9 +1,7 @@
 ﻿using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.BusinessModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.Mappers
 {

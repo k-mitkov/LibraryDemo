@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LibraryDemo.DesktopClient.Resources.AppTextContent
 {
@@ -62,7 +60,9 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
         public string SuccesfullyDeletedLibrary();
         public string SuccesfullyDeletedBook();
         public IEnumerable<string> Genders();
-        public char GenderTranslate(string gender);
+        public string GenderTranslate(string gender);
+        public string GenderTransformation(char gender);
+        public char GenderTransformation(string gender);
         public string WarningAuthorDelete();
         public string WarningLibraryDelete();
     }

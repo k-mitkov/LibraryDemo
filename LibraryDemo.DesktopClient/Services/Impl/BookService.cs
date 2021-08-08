@@ -32,9 +32,9 @@ namespace LibraryDemo.DesktopClient.Services.Impl
             var book = new Book
             {
                 Title = title,
-                Author = authorMapper.Map(author),
+                Author = dataService.FindAuthor(author.Name),
                 Price = price,
-                Library = libraryMapper.Map(library)
+                Library = dataService.FindLibrary(library.Name)
             };
             return bookMapper.Map(dataService.AddNewBook(book));
         }

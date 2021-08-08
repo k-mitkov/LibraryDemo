@@ -1,7 +1,6 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels

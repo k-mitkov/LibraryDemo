@@ -77,7 +77,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         {
             if (ValidateInput())
             {
-                authorService.Add(_name, content.GenderTranslate(_gender), _mail);
+                authorService.Add(_name, content.GenderTransformation(_gender), _mail);
 
                 SuccessfulOperationViewModel viewModel = new SuccessfulOperationViewModel(content.SuccessfullyAddedAuthor());
                 SuccessfulOperationView view = new SuccessfulOperationView();
