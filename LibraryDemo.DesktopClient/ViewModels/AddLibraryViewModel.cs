@@ -68,9 +68,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         private bool ValidateInput()
         {
-            if (_name != null && _name.Length > 2)
+            if (_name != null && _name.Trim().Length > 2 && _name.Length < 100)
             {
-                if (_address != null && _address.Length > 5)
+                if (_address != null && _address.Trim().Length > 5 && _address.Length < 200)
                 {
                     return true;
                 }

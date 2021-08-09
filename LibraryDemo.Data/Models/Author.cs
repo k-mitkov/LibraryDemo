@@ -4,7 +4,6 @@ namespace LibraryDemo.Data.Models
 {
     public class Author
     {
-
         #region Proparties
         public int Id { get; set; }
         public string Name { get; set; }

@@ -30,7 +30,7 @@ namespace LibraryDemo.Data
         public Author FindAuthor(string name)
         {
             Author author= context.Authors.FirstOrDefault((a) => a.Name.Equals(name));
-            author.Books = this.GetBooksByAuthorId(author.Id).ToList();
+            author.Books = GetBooksByAuthorId(author.Id).ToList();
             return author;
         }
 
@@ -48,7 +48,7 @@ namespace LibraryDemo.Data
         {
             context.Authors.Remove(context.Authors.Find(id));
 
-            foreach(Book book in this.GetBooksByAuthorId(id))
+            foreach(Book book in GetBooksByAuthorId(id))
             {
                 context.Books.Remove(book);
             }
@@ -68,7 +68,7 @@ namespace LibraryDemo.Data
         public Library FindLibrary(string name)
         {
             Library library = context.Libraries.FirstOrDefault((l) => l.Name.Equals(name));
-            library.Books = this.GetBooksByLibraryId(library.Id).ToList();
+            library.Books = GetBooksByLibraryId(library.Id).ToList();
             return library;
         }
 
@@ -86,7 +86,7 @@ namespace LibraryDemo.Data
         {
             context.Libraries.Remove(context.Libraries.Find(id));
 
-            foreach (Book book in this.GetBooksByLibraryId(id))
+            foreach (Book book in GetBooksByLibraryId(id))
             {
                 context.Books.Remove(book);
             }

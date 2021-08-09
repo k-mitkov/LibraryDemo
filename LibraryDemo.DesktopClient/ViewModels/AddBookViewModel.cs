@@ -119,7 +119,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         
         private bool ValidateInput()
         {
-            if(_title != null && _title.Length > 2)
+            if(_title != null && _title.Trim().Length > 0 && _title.Length < 100)
             {
                 if(decimal.TryParse(_price, out price) && price > 0)
                 {

@@ -286,9 +286,9 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
             switch (language)
             {
                 case Languages.Български:
-                    return "Заглавието трябва да е поне 3 символа.";
+                    return "Заглавието трябва да е поне 1 символ.";
                 default:
-                    return "The title must be at least 3 characters.";
+                    return "The title must be at least 1 character.";
             }
         }
 

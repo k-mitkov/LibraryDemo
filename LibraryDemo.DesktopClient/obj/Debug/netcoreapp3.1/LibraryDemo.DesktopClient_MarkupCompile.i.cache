@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\App.xaml
 15-1782461943
 10365276532
-67352022119
+68-2092184156
 2181683217561
 Views\AddAuthorView.xaml;Views\AddBookView.xaml;Views\AddLibraryView.xaml;Views\BooksByView.xaml;Views\BookView.xaml;Views\DeleteBookView.xaml;Views\DeleteView.xaml;Views\MainWindow.xaml;Views\SearchView.xaml;Views\SecondMenuView.xaml;Views\SettingsView.xaml;Views\ShowAuthorsView.xaml;Views\ShowBooksView.xaml;Views\ShowLibrariesView.xaml;Views\SuccessfulOperationView.xaml;
 
-True
+False
 

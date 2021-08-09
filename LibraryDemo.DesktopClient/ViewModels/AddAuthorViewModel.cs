@@ -93,11 +93,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         private bool ValidateInput()
         {
-            if (_name != null && _name.Length > 2)
+            if (_name != null && _name.Trim().Length > 2 && _name.Length < 100)
             {
                 if (_gender != null)
                 {
-                    if(_mail != null && _mail.Length > 4)
+                    if(_mail != null && _mail.Trim().Length > 4 && _mail.Length < 200)
                     {
                         return true;
                     }
