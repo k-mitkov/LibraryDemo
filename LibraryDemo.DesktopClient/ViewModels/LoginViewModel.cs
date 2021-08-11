@@ -1,4 +1,5 @@
 ﻿using LibraryDemo.DesktopClient.Command;
+using LibraryDemo.DesktopClient.Util;
 using LibraryDemo.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
@@ -97,7 +98,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void ShowForgottenPasswordForm(Object o)
         {
-            CurentView = null;
+            IMailSender mailSender = new MailSender();
+            mailSender.Send("kasi0m0@gmail.com", "raboti 123");
+            CurentView = new ResetPasswordView();
         }
 
         public void RegistrationHandler()
