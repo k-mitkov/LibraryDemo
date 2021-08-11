@@ -28,27 +28,9 @@
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name ="Authors" Grid.Column="0" Content = "{Binding AuthorButtonContent}"
-                        Command="{Binding Path=AuthorCommand}"
-                   Foreground="Black"
-                   Background="Moccasin"
-                   HorizontalContentAlignment="Center"
-                   FontSize="50"
-                   Cursor="Hand"/>
-            <Button x:Name ="Books" Grid.Column="1" Content = "{Binding BookButtonContent}"
-                        Command="{Binding Path=BookCommand}"
-                   HorizontalContentAlignment="Center"
-                   Foreground="Black"
-                   Background="Moccasin"
-                   FontSize="50"
-                   Cursor="Hand"/>
-            <Button x:Name ="Libraries" Grid.Column="2" Content = "{Binding LibraryButtonContent}"
-                        Command="{Binding Path=LibraryCommand}"
-                   HorizontalContentAlignment="Center"
-                   Foreground="Black"
-                   Background="Moccasin"
-                   FontSize="50"
-                   Cursor="Hand"/>
+            <Button x:Name ="Authors" Grid.Column="0" Content = "{Binding AuthorButtonContent}" Command="{Binding Path=AuthorCommand}" FontSize="50" Style="{DynamicResource MenuButton}"/>
+            <Button x:Name ="Books" Grid.Column="1" Content = "{Binding BookButtonContent}" Command="{Binding Path=BookCommand}" FontSize="50" Style="{DynamicResource MenuButton}"/>
+            <Button x:Name ="Libraries" Grid.Column="2" Content = "{Binding LibraryButtonContent}" Command="{Binding Path=LibraryCommand}" FontSize="50" Style="{DynamicResource MenuButton}"/>
             <Button Grid.Column="3" Background="Moccasin" Command="{Binding Path=SettingsCommand}">
                 <Image Source="\Resources\images\settings.png"/>
             </Button>

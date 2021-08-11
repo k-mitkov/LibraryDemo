@@ -185,3 +185,16 @@ C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bi
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\Resources\images\search.jpg
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\Resources\images\settings.png
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\WPFLocalizeExtension.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\XAMLMarkupExtensions.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\RegisterView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\RegisterView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient.Resources.loginFormContent.Resources.resources
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\LoginView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\LoginView.baml
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\bg-BG\LibraryDemo.DesktopClient.resources.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\bg-BG\LibraryDemo.DesktopClient.resources.dll
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient.Resources.loginFormContent.Resources.bg-BG.resources

@@ -13,6 +13,18 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand libraryCommand;
         private ActionCommand settingsCommand;
         private UserControl currentView;
+        private bool isLogged;
+        #endregion
+
+        #region Constructor
+        public MainViewModel()
+        {
+            LoginViewModel viewModel = new LoginViewModel();
+            LoginView view = new LoginView();
+            view.DataContext = viewModel;
+            viewModel.LoginEvent += LoginHandler;
+            CurentView = view;
+        }
         #endregion
 
         #region Proparties
@@ -109,6 +121,19 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
+        public bool IsLogged
+        {
+            get
+            {
+                return isLogged;
+            }
+            set
+            {
+                isLogged = true;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -151,6 +176,11 @@ namespace LibraryDemo.DesktopClient.ViewModels
             CurentView = view;
         }
 
+        public void LoginHandler()
+        {
+            IsLogged = true;
+            CurentView = null;
+        }
         #endregion
     }
 }

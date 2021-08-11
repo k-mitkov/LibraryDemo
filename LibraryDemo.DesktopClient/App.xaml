@@ -9,6 +9,38 @@
             <Style x:Key="ListViewStyle" TargetType="ListViewItem">
                 <Setter Property="HorizontalContentAlignment" Value="Center" />
             </Style>
+
+            <Style x:Key="MenuButton" TargetType="Button">
+                <Setter Property="IsEnabled" Value="False"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <BlurEffect x:Name="BlurEffect" Radius="5" KernelType="Gaussian"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Border" Background="Moccasin" Cursor="Hand" BorderBrush="Black" BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="Salmon"/>
+                                </Trigger>
+                                <DataTrigger Binding="{Binding Path=IsLogged}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <BlurEffect Radius="0" KernelType="Gaussian"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
