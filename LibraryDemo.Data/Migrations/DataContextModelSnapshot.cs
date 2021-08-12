@@ -87,6 +87,27 @@ namespace LibraryDemo.Data.Migrations
                     b.ToTable("Libraries");
                 });
 
+            modelBuilder.Entity("LibraryDemo.Data.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("LibraryDemo.Data.Models.Book", b =>
                 {
                     b.HasOne("LibraryDemo.Data.Models.Author", "Author")

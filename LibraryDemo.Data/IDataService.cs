@@ -21,5 +21,9 @@ namespace LibraryDemo.Data
         public IQueryable<Author> SearchForAutors(string keyWord);
         public bool DeleteBook(int id);
         public bool DeleteAuthor(int id);
+        public User AddNewUser(User user);
+        public User GetUserByName(string name);
+        public User GetUserByMail(string mail);
+        public bool UpdateUserPassword(User user);
     }
 }

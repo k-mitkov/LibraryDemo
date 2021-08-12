@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:LibraryDemo.DesktopClient"
+    xmlns:CC="clr-namespace:LibraryDemo.DesktopClient.Resources.loginFormContent"
     StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,27 +12,35 @@
             </Style>
 
             <Style x:Key="MenuButton" TargetType="Button">
-                <Setter Property="IsEnabled" Value="False"/>
+                <Setter Property="IsEnabled" Value="False" />
                 <Setter Property="Effect">
                     <Setter.Value>
-                        <BlurEffect x:Name="BlurEffect" Radius="5" KernelType="Gaussian"/>
+                        <BlurEffect
+                            x:Name="BlurEffect"
+                            KernelType="Gaussian"
+                            Radius="5" />
                     </Setter.Value>
                 </Setter>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border x:Name="Border" Background="Moccasin" Cursor="Hand" BorderBrush="Black" BorderThickness="1">
-                                <ContentPresenter HorizontalAlignment="Center"/>
+                            <Border
+                                x:Name="Border"
+                                Background="Moccasin"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Cursor="Hand">
+                                <ContentPresenter HorizontalAlignment="Center" />
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsFocused" Value="True">
-                                    <Setter TargetName="Border" Property="Background" Value="Salmon"/>
+                                    <Setter TargetName="Border" Property="Background" Value="Salmon" />
                                 </Trigger>
                                 <DataTrigger Binding="{Binding Path=IsLogged}" Value="True">
-                                    <Setter Property="IsEnabled" Value="True"/>
+                                    <Setter Property="IsEnabled" Value="True" />
                                     <Setter Property="Effect">
                                         <Setter.Value>
-                                            <BlurEffect Radius="0" KernelType="Gaussian"/>
+                                            <BlurEffect KernelType="Gaussian" Radius="0" />
                                         </Setter.Value>
                                     </Setter>
                                 </DataTrigger>
@@ -39,8 +48,72 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Foreground" Value="Black" />
             </Style>
+
+            <Style x:Key="LogInFaild"  TargetType="TextBlock">
+                <Setter Property="Text" Value="{x:Static CC:Resources.strInvalidUsernameOrPassword}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsInputValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidName" TargetType="TextBlock">
+                <Setter Property="Text" Value="{x:Static CC:Resources.strInvalidUsername}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsNameValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidPassword" TargetType="TextBlock">
+                <Setter Property="Text" Value="{x:Static CC:Resources.strInvalidPassword}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsPasswordValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidMail" TargetType="TextBlock">
+                <Setter Property="Text" Value="{x:Static CC:Resources.strInvalidMail}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsMailValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="NameNotAvailable" TargetType="TextBlock">
+                <Setter Property="Text" Value=""/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsNameAvailable}" Value="false">
+                        <Setter Property="Text" Value="{x:Static CC:Resources.strNameNotAvailable}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="MailNotAvailable" TargetType="TextBlock">
+                <Setter Property="Text" Value=""/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsMailAvailable}" Value="false">
+                        <Setter Property="Text" Value="{x:Static CC:Resources.strMailNotAvailable}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="MailNotFound" TargetType="TextBlock">
+                <Setter Property="Text" Value=""/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsMailFound}" Value="false">
+                        <Setter Property="Text" Value="{x:Static CC:Resources.strMailNotFound}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

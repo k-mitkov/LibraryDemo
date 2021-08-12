@@ -15,6 +15,9 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private ActionCommand registerFormCommand;
         private ActionCommand forgottenPasswordCommand;
         private UserControl currentView;
+        private string name;
+        private string password;
+        private bool isInputValid = true;
         public event Action LoginEvent;
         #endregion
 
@@ -68,6 +71,43 @@ namespace LibraryDemo.DesktopClient.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+            }
+        }
+
+        public bool IsInputValid
+        {
+            get
+            {
+                return isInputValid;
+            }
+            set
+            {
+                isInputValid = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -83,14 +123,24 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Login(Object o)
         {
-            OnLogin();
-            CurentView = null;
+            PasswordBox passwordBox = (PasswordBox) o;
+            Password = passwordBox.Password;
+            if (userService.LogIn(name, password))
+            {
+                IsInputValid = true;
+                CurentView = null;
+                OnLogin();
+            }
+            else
+            {
+                IsInputValid = false;
+            }
         }
 
         public void ShowRegisterForm(Object o)
         {
             RegisterViewModel viewModel = new RegisterViewModel();
-            viewModel.RegisterEvent += RegistrationHandler;
+            viewModel.SomeEvent += ReturnLoginPage;
             RegisterView view = new RegisterView();
             view.DataContext = viewModel;
             CurentView = view;
@@ -98,14 +148,17 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void ShowForgottenPasswordForm(Object o)
         {
-            IMailSender mailSender = new MailSender();
-            mailSender.Send("kasi0m0@gmail.com", "raboti 123");
-            CurentView = new ResetPasswordView();
+            ResetPasswordViewModel viewModel = new ResetPasswordViewModel();
+            viewModel.SomeEvent += ReturnLoginPage;
+            ResetPasswordView view = new ResetPasswordView();
+            view.DataContext = viewModel;
+            CurentView = view;
         }
 
-        public void RegistrationHandler()
+        public void ReturnLoginPage()
         {
             CurentView = null;
+            IsInputValid = true;
         }
         #endregion
     }

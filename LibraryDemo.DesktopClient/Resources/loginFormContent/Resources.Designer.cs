@@ -70,6 +70,42 @@ namespace LibraryDemo.DesktopClient.Resources.loginFormContent {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter valid mail..
+        /// </summary>
+        public static string strInvalidMail {
+            get {
+                return ResourceManager.GetString("strInvalidMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters: one digit, one special character, one uppercase and one lowercase letter..
+        /// </summary>
+        public static string strInvalidPassword {
+            get {
+                return ResourceManager.GetString("strInvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username.
+        /// </summary>
+        public static string strInvalidUsername {
+            get {
+                return ResourceManager.GetString("strInvalidUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username or password.
+        /// </summary>
+        public static string strInvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("strInvalidUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string strLogin {
@@ -88,11 +124,38 @@ namespace LibraryDemo.DesktopClient.Resources.loginFormContent {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to This mail is already taken.
+        /// </summary>
+        public static string strMailNotAvailable {
+            get {
+                return ResourceManager.GetString("strMailNotAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail not found.
+        /// </summary>
+        public static string strMailNotFound {
+            get {
+                return ResourceManager.GetString("strMailNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string strName {
             get {
                 return ResourceManager.GetString("strName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This username is already taken.
+        /// </summary>
+        public static string strNameNotAvailable {
+            get {
+                return ResourceManager.GetString("strNameNotAvailable", resourceCulture);
             }
         }
         
@@ -106,11 +169,20 @@ namespace LibraryDemo.DesktopClient.Resources.loginFormContent {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register.
+        ///   Looks up a localized string similar to Registration.
         /// </summary>
-        public static string strRegister {
+        public static string strRegistration {
             get {
-                return ResourceManager.GetString("strRegister", resourceCulture);
+                return ResourceManager.GetString("strRegistration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset password.
+        /// </summary>
+        public static string strResetPassword {
+            get {
+                return ResourceManager.GetString("strResetPassword", resourceCulture);
             }
         }
         
@@ -120,6 +192,15 @@ namespace LibraryDemo.DesktopClient.Resources.loginFormContent {
         public static string strSingIn {
             get {
                 return ResourceManager.GetString("strSingIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sing up.
+        /// </summary>
+        public static string strSingUp {
+            get {
+                return ResourceManager.GetString("strSingUp", resourceCulture);
             }
         }
     }

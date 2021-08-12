@@ -11,6 +11,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
         protected IBookService bookService;
         protected ILibraryService libraryService;
         protected IContent content;
+        protected IUserService userService;
         #endregion
 
         #region Constructor
@@ -20,6 +21,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             authorService = new AuthorService();
             libraryService = new LibraryService();
             bookService = new BookService();
+            userService = new UserSrvice();
         }
         #endregion
     }

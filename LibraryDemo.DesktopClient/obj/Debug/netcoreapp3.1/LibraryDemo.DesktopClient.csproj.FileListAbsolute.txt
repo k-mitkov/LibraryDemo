@@ -198,3 +198,5 @@ C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\ob
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\bin\Debug\netcoreapp3.1\bg-BG\LibraryDemo.DesktopClient.resources.dll
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\bg-BG\LibraryDemo.DesktopClient.resources.dll
 C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\LibraryDemo.DesktopClient.Resources.loginFormContent.Resources.bg-BG.resources
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ResetPasswordView.g.cs
+C:\Users\Administrator\Documents\GitHub\LibraryDemo\LibraryDemo.DesktopClient\obj\Debug\netcoreapp3.1\Views\ResetPasswordView.baml

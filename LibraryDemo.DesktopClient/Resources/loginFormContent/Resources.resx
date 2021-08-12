@@ -120,22 +120,49 @@
   <data name="strForgottenPassword" xml:space="preserve">
     <value>Forgotten password</value>
   </data>
+  <data name="strInvalidMail" xml:space="preserve">
+    <value>Please enter valid mail.</value>
+  </data>
+  <data name="strInvalidPassword" xml:space="preserve">
+    <value>Password must be at least 8 characters: one digit, one special character, one uppercase and one lowercase letter.</value>
+  </data>
+  <data name="strInvalidUsername" xml:space="preserve">
+    <value>Invalid username</value>
+  </data>
+  <data name="strInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
   <data name="strLogin" xml:space="preserve">
     <value>Log in</value>
   </data>
   <data name="strMail" xml:space="preserve">
     <value>Mail</value>
   </data>
+  <data name="strMailNotAvailable" xml:space="preserve">
+    <value>This mail is already taken</value>
+  </data>
+  <data name="strMailNotFound" xml:space="preserve">
+    <value>Mail not found</value>
+  </data>
   <data name="strName" xml:space="preserve">
-    <value>Name</value>
+    <value>Username</value>
+  </data>
+  <data name="strNameNotAvailable" xml:space="preserve">
+    <value>This username is already taken</value>
   </data>
   <data name="strPassword" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="strRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="strRegistration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="strResetPassword" xml:space="preserve">
+    <value>Reset password</value>
   </data>
   <data name="strSingIn" xml:space="preserve">
     <value>Sing in</value>
+  </data>
+  <data name="strSingUp" xml:space="preserve">
+    <value>Sing up</value>
   </data>
 </root>

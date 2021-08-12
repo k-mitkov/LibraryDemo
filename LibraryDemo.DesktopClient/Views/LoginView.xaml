@@ -38,31 +38,30 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strName}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Name}" FontSize="20"></TextBox>
+                <TextBox Grid.Row="1" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center"></TextBox>
             </Grid>
 
             <Grid Grid.Row="2"  Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strPassword}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Password}" FontSize="20"></TextBox>
+                <PasswordBox Grid.Row="1" FontSize="20" x:Name="passwordText" VerticalAlignment="Center"/>
             </Grid>
 
             <Grid Grid.Row="3"  Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding ErrMasage}" FontSize="20"/>
-
-                <Button Grid.Row="1" Content="{x:Static CC:Resources.strSingIn}" FontSize="20" Command="{Binding Path=LoginCommand}" Background="DarkSalmon"/>
+                <TextBlock Grid.Row="0" FontSize="20" Style="{StaticResource LogInFaild}"/>
+                <Button Grid.Row="1" Content="{x:Static CC:Resources.strSingIn}" FontSize="20" CommandParameter="{Binding ElementName=passwordText}" Command="{Binding Path=LoginCommand}" Background="DarkSalmon"/>
             </Grid>
 
             <Grid Grid.Row="4" >
@@ -75,7 +74,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="1" Grid.Column="0" Margin="20,0" Content="{x:Static CC:Resources.strRegister}" FontSize="20" Command="{Binding Path=RegisterFormCommand}" Background="DarkSalmon"/>
+                <Button Grid.Row="1" Grid.Column="0" Margin="20,0" Content="{x:Static CC:Resources.strRegistration}" FontSize="20" Command="{Binding Path=RegisterFormCommand}" Background="DarkSalmon"/>
                 <Button Grid.Row="1" Grid.Column="1" Margin="20,0" Content="{x:Static CC:Resources.strForgottenPassword}" FontSize="20" Command="{Binding Path=ForgottenPasswordCommand}" Background="DarkSalmon"/>
             </Grid>
         </Grid>

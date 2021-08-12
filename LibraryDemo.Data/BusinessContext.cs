@@ -135,6 +135,30 @@ namespace LibraryDemo.Data
 
             return true;
         }
+
+        public User AddNewUser(User user)
+        {
+            context.Users.Add(user);
+            context.SaveChanges();
+            return user;
+        }
+
+        public User GetUserByName(string name)
+        {
+            return context.Users.FirstOrDefault((u) => u.Name.Equals(name));
+        }
+
+        public User GetUserByMail(string mail)
+        {
+            return context.Users.FirstOrDefault((u) => u.Mail.Equals(mail));
+        }
+
+        public bool UpdateUserPassword(User user)
+        {
+            context.Users.Update(user);
+            context.SaveChanges();
+            return true;
+        }
         #endregion
 
         #region IDesposable Members

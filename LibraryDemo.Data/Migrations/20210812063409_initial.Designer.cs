@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryDemo.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210803124913_initial")]
+    [Migration("20210812063409_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,6 +87,27 @@ namespace LibraryDemo.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Libraries");
+                });
+
+            modelBuilder.Entity("LibraryDemo.Data.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("LibraryDemo.Data.Models.Book", b =>

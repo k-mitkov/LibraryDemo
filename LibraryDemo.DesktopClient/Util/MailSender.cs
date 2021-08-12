@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
-using System.Text;
 
 namespace LibraryDemo.DesktopClient.Util
 {
     class MailSender : IMailSender
     {
+        #region Methods
         public void Send(string mail, string password)
         {
             var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -19,5 +17,6 @@ namespace LibraryDemo.DesktopClient.Util
 
             smtpClient.Send("no.reply.library.demo@gmail.com", mail, "New passwor", password);
         }
+        #endregion
     }
 }

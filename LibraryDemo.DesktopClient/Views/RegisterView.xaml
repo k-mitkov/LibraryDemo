@@ -21,59 +21,83 @@
         
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
             <Border CornerRadius="30" Background="Moccasin" Grid.RowSpan="6"/>
 
             <Grid Grid.Row="0">
-                <TextBlock Text="{x:Static CC:Resources.strRegister}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{x:Static CC:Resources.strRegistration}" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
 
             <Grid Grid.Row="1" Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strName}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Name}" FontSize="20"></TextBox>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strName}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidName}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center"/>
             </Grid>
 
             <Grid Grid.Row="2"  Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strPassword}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Password}" FontSize="20"></TextBox>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strPassword}"></Label>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidPassword}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <PasswordBox Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" x:Name="passwordText" VerticalAlignment="Center"/>
             </Grid>
 
             <Grid Grid.Row="3"  Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strMail}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Mail}" FontSize="20"></TextBox>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strMail}"></Label>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidMail}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Mail}" FontSize="20" VerticalAlignment="Center"></TextBox>
             </Grid>
 
             <Grid Grid.Row="4"  Margin="20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding ErrMasage}" FontSize="20"/>
-
-                <Button Grid.Row="1" Content="{x:Static CC:Resources.strRegister}" FontSize="20" Command="{Binding Path=RegisterCommand}" Background="DarkSalmon"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" FontSize="10" Style="{StaticResource NameNotAvailable}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource MailNotAvailable}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Button Grid.Row="1" Grid.ColumnSpan="2" Content="{x:Static CC:Resources.strSingUp}" FontSize="20" CommandParameter="{Binding ElementName=passwordText}" Command="{Binding Path=RegisterCommand}" Background="DarkSalmon"/>
+            </Grid>
+            
+            <Grid Grid.Row="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="1" Grid.Column="0" Margin="20,0" Content="{x:Static CC:Resources.strLogin}" FontSize="20" Command="{Binding Path=LoginFormCommand}" Background="DarkSalmon"/>
             </Grid>
         </Grid>
         <ContentControl Grid.RowSpan="3" Grid.ColumnSpan="3" Content="{Binding CurrentView}"/>
