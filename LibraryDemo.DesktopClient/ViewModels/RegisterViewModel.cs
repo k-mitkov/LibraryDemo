@@ -1,8 +1,5 @@
 ﻿using LibraryDemo.DesktopClient.Command;
-using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
@@ -18,6 +15,8 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private string name;
         private string password;
         private string mail;
+        private const string passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$";
+        private const string mailRegex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
         private bool isNameValid = true;
         private bool isPasswordValid = true;
         private bool isMailValid = true;
@@ -166,12 +165,12 @@ namespace LibraryDemo.DesktopClient.ViewModels
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(Object o)
+        public bool CanExecuteShow(object o)
         {
             return true;
         }
 
-        public void Register(Object o)
+        public void Register(object o)
         {
             PasswordBox passwordBox = (PasswordBox)o;
             Password = passwordBox.Password;
@@ -187,7 +186,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public void BackToLogin(Object o)
+        public void BackToLogin(object o)
         {
             OnEvent();
         }
@@ -200,8 +199,8 @@ namespace LibraryDemo.DesktopClient.ViewModels
         private bool ValidateInput()
         {
             IsNameValid = name != null && name.Length > 0;
-            IsPasswordValid = password != null && Regex.IsMatch(password, "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$");
-            IsMailValid = mail != null && Regex.IsMatch(mail, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z");
+            IsPasswordValid = password != null && Regex.IsMatch(password, passwordRegex);
+            IsMailValid = mail != null && Regex.IsMatch(mail, mailRegex);
             if(isNameValid && isPasswordValid && isMailValid)
             {
                 IsNameAvailable = userService.ValidateName(name);

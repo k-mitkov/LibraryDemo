@@ -3,6 +3,9 @@ using LibraryDemo.Data.Models;
 using LibraryDemo.DesktopClient.ExceptionsLogger;
 using LibraryDemo.DesktopClient.Util;
 using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LibraryDemo.DesktopClient.Services.Impl
 {
@@ -70,8 +73,9 @@ namespace LibraryDemo.DesktopClient.Services.Impl
                 var user = dataService.GetUserByMail(mail);
                 if (user != null)
                 {
-                    mailSender.Send(mail, "aB3!fK5#");
-                    user.Password = EncryptPassword("aB3!fK5#");
+                    string password = GeneratePassword();
+                    mailSender.Send(mail, password);
+                    user.Password = EncryptPassword(password);
                     dataService.UpdateUserPassword(user);
                     return true;
                 }
@@ -114,15 +118,42 @@ namespace LibraryDemo.DesktopClient.Services.Impl
         {
             try
             {
-                byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
-                data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
-                return System.Text.Encoding.ASCII.GetString(data);
+                byte[] data = Encoding.ASCII.GetBytes(password);
+                data = new SHA256Managed().ComputeHash(data);
+                return Encoding.ASCII.GetString(data);
             }
             catch (Exception e)
             {
                 ExceptionLogger.LoggException(e);
                 return null;
             }
+        }
+
+        private string GeneratePassword()
+        {
+            const string lowerCase = "abcdefghijklmnopqrstuvwxyz";
+            const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string numbers = "1234567890";
+            const string specialSymbols = "#?!@$%^&*-";
+            const string allChars = lowerCase + upperCase + numbers + specialSymbols;
+            List<string> strings = new List<string>();
+            strings.Add(lowerCase);
+            strings.Add(upperCase);
+            strings.Add(numbers);
+            strings.Add(specialSymbols);
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (strings.Count > 0)
+            {
+                string s = strings[rnd.Next(strings.Count)];
+                res.Append(s[rnd.Next(s.Length)]);
+                strings.Remove(s);
+            }
+            for(int i = 0; i < 4; i++)
+            {
+                res.Append(allChars[rnd.Next(allChars.Length)]);
+            }
+            return res.ToString();
         }
         #endregion
     }

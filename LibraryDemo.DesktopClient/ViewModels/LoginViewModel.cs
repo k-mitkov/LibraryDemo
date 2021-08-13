@@ -1,9 +1,6 @@
 ﻿using LibraryDemo.DesktopClient.Command;
-using LibraryDemo.DesktopClient.Util;
 using LibraryDemo.DesktopClient.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Controls;
 
 namespace LibraryDemo.DesktopClient.ViewModels
@@ -116,12 +113,12 @@ namespace LibraryDemo.DesktopClient.ViewModels
             LoginEvent.Invoke();
         }
 
-        public bool CanExecuteShow(Object o)
+        public bool CanExecuteShow(object o)
         {
             return true;
         }
 
-        public void Login(Object o)
+        public void Login(object o)
         {
             PasswordBox passwordBox = (PasswordBox) o;
             Password = passwordBox.Password;
@@ -137,7 +134,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             }
         }
 
-        public void ShowRegisterForm(Object o)
+        public void ShowRegisterForm(object o)
         {
             RegisterViewModel viewModel = new RegisterViewModel();
             viewModel.SomeEvent += ReturnLoginPage;
@@ -146,7 +143,7 @@ namespace LibraryDemo.DesktopClient.ViewModels
             CurentView = view;
         }
 
-        public void ShowForgottenPasswordForm(Object o)
+        public void ShowForgottenPasswordForm(object o)
         {
             ResetPasswordViewModel viewModel = new ResetPasswordViewModel();
             viewModel.SomeEvent += ReturnLoginPage;

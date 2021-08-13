@@ -46,7 +46,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidName}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center" MaxLength="32"/>
             </Grid>
 
             <Grid Grid.Row="2"  Margin="20,0">
@@ -60,7 +60,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strPassword}"></Label>
                 <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidPassword}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                <PasswordBox Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" x:Name="passwordText" VerticalAlignment="Center"/>
+                <PasswordBox Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" x:Name="passwordText" VerticalAlignment="Center" MaxLength="32"/>
             </Grid>
 
             <Grid Grid.Row="3"  Margin="20,0">
@@ -74,7 +74,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{x:Static CC:Resources.strMail}"></Label>
                 <TextBlock Grid.Row="0" Grid.Column="1" FontSize="10" Style="{StaticResource InvalidMail}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Mail}" FontSize="20" VerticalAlignment="Center"></TextBox>
+                <TextBox Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Mail}" FontSize="20" VerticalAlignment="Center" MaxLength="64"></TextBox>
             </Grid>
 
             <Grid Grid.Row="4"  Margin="20,0">

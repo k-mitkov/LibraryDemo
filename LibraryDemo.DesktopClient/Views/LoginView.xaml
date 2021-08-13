@@ -41,7 +41,7 @@
                     <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strName}"></Label>
-                <TextBox Grid.Row="1" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center"></TextBox>
+                <TextBox Grid.Row="1" Text="{Binding Name}" FontSize="20" VerticalAlignment="Center" MaxLength="32"></TextBox>
             </Grid>
 
             <Grid Grid.Row="2"  Margin="20,0">
@@ -51,7 +51,7 @@
                     <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="20" Content="{x:Static CC:Resources.strPassword}"></Label>
-                <PasswordBox Grid.Row="1" FontSize="20" x:Name="passwordText" VerticalAlignment="Center"/>
+                <PasswordBox Grid.Row="1" FontSize="20" x:Name="passwordText" VerticalAlignment="Center" MaxLength="32"/>
             </Grid>
 
             <Grid Grid.Row="3"  Margin="20,0">

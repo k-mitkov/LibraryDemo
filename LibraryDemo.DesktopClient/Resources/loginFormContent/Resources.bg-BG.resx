@@ -118,24 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="strForgottenPassword" xml:space="preserve">
-    <value>strForgottenPassword</value>
+    <value>Забравена парола</value>
   </data>
   <data name="strLogin" xml:space="preserve">
-    <value>strLogin</value>
+    <value>Вход</value>
   </data>
   <data name="strMail" xml:space="preserve">
-    <value>strMail</value>
+    <value>Имейл</value>
   </data>
   <data name="strName" xml:space="preserve">
-    <value>strName</value>
+    <value>Потребителско име</value>
   </data>
   <data name="strPassword" xml:space="preserve">
-    <value>strPassword</value>
-  </data>
-  <data name="strRegister" xml:space="preserve">
-    <value>strRegister</value>
+    <value>Парола</value>
   </data>
   <data name="strSingIn" xml:space="preserve">
-    <value>strSingIn</value>
+    <value>Впиши</value>
+  </data>
+  <data name="strInvalidMail" xml:space="preserve">
+    <value>Моля въведете валиден имейл.</value>
+  </data>
+  <data name="strInvalidPassword" xml:space="preserve">
+    <value>Паролата трябва да е поне 8 символа: една цифра, един специален символ, една малка и голяма буква.</value>
+  </data>
+  <data name="strInvalidUsername" xml:space="preserve">
+    <value>Невалидно потребителско име</value>
+  </data>
+  <data name="strInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Невалидно потребителско име или парола</value>
+  </data>
+  <data name="strMailNotAvailable" xml:space="preserve">
+    <value>Имейла е вече зает</value>
+  </data>
+  <data name="strMailNotFound" xml:space="preserve">
+    <value>Имейла не е намерен</value>
+  </data>
+  <data name="strNameNotAvailable" xml:space="preserve">
+    <value>Това потребителско име е вече заето</value>
+  </data>
+  <data name="strRegistration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="strResetPassword" xml:space="preserve">
+    <value>Възобнови парола</value>
+  </data>
+  <data name="strSingUp" xml:space="preserve">
+    <value>Регистрирай</value>
   </data>
 </root>
