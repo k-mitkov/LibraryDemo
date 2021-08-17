@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryDemo.DesktopClient.Resources.AppTextContent;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,9 +14,12 @@ namespace LibraryDemo.DesktopClient
     /// </summary>
     public partial class App : Application
     {
-        App()
+        public App()
         {
-            //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("bg-BG");
+            if (AppContent.language.Equals(Languages.Български))
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("bg-BG");
+            }
         }
     }
 }

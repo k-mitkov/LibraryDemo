@@ -1,5 +1,6 @@
 ﻿using LibraryDemo.DesktopClient.Command;
 using LibraryDemo.DesktopClient.Resources.AppTextContent;
+using LibraryDemo.DesktopClient.Util;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -69,9 +70,16 @@ namespace LibraryDemo.DesktopClient.ViewModels
 
         public void Save(Object o)
         {
+            if (s_language.Equals(Languages.Български)){
+                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("bg-BG");
+            }
+            else
+            {
+                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("en");
+            }
             AppContent.SetLanguage(Slanguage);
             Application.Current.MainWindow.DataContext = new MainViewModel();
-            
+
         }
         #endregion
     }

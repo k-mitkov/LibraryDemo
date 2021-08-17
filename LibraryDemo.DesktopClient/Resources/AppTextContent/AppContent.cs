@@ -5,7 +5,7 @@ namespace LibraryDemo.DesktopClient.Resources.AppTextContent
     public class AppContent : IContent
     {
         #region Declaration
-        private static Languages language = Languages.Български;
+        public static Languages language = Languages.English;
         #endregion
 
         #region Methods
